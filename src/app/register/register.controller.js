@@ -8,8 +8,6 @@
 
 	function RegisterController() {
 
-        var vm = this;
-        
     }
 
 })();

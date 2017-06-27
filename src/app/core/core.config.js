@@ -8,10 +8,6 @@
     /** @ngInject */
     function config() {
 
-        // toastr configuration
-        toastr.options.timeOut = 4000;
-        toastr.options.positionClass = 'toast-top-right';
-        toastr.options.preventDuplicates = true;
     }
 
 })();

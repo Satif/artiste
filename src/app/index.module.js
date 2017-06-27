@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('rin', [
+        .module('artside', [
 
             // Core
             'app.core',
@@ -16,7 +16,7 @@
             'app.login',
             'app.register',
             'app.home',
-            'app.components'
+            'app.admin'
 
         ]);
 })();

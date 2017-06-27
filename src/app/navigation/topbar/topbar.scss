@@ -1,11 +1,8 @@
 #topbar {
 	.navbar {
-		box-shadow: $topbar-shadow;
 	}
     .navbar-fixed-top {
   		border: 0;
-  		background-color: $topbar-bg;
-  		color: $topbar-color;
 	}
 	.avatar {
 		object-fit: cover;
@@ -21,10 +18,8 @@
 		margin-left: 0.5rem;
 	}
 	a {
-		color: $topbar-color;
 
 		&:hover {
-			color: lighten($topbar-color, 10%);
 			text-decoration: none;
 			cursor: pointer; 
 			cursor: hand;

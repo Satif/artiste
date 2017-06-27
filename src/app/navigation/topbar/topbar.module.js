@@ -9,8 +9,6 @@
     /** @ngInject */
     function config() {
 
-        var vm = this;
-        
     }
 
 })();

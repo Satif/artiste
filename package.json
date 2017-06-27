@@ -1,5 +1,5 @@
 {
-  "name": "Rin",
+  "name": "ArtSide",
   "version": "1.0.0",
   "description": "Angular & Bootstrap 4 dashboard boiler",
   "main": "gulpfile.js",
@@ -8,7 +8,8 @@
   },
   "author": "Matt Christians <christians.matt@gmail.com> (http://mdchristians.com)",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "browser-sync": "~2.7.12",
     "browser-sync-spa": "~1.0.2",

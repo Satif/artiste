@@ -19,7 +19,7 @@ gulp.task('partials', function() {
             quotes: true
         }))
         .pipe($.angularTemplatecache('templateCacheHtml.js', {
-            module: 'rin',
+            module: 'artside',
             root: 'app'
         }))
         .pipe(gulp.dest(conf.paths.tmp + '/partials/'));

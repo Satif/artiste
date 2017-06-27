@@ -1,22 +1,24 @@
-(function() {
+/*jshint es5: false */
+/*jshint -W024 */
 
+(function() {
     'use strict';
 
     angular
-        .module('rin')
+        .module('artside')
         .config(routeConfig);
 
     /** @ngInject */
-    function routeConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home');
 
         $stateProvider
             .state('app', {
                 abstract: true,
                 views   : {
                     'main@'         : {
-                        templateUrl: 'app/core/layouts/default.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'topbar@app': {
                         templateUrl: 'app/navigation/topbar/topbar.html',

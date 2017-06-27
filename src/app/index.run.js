@@ -1,13 +1,13 @@
-(function() {
-    
-    'use strict';
+(function () {
 
-    angular
-        .module('rin')
-        .run(runBlock);
+  'use strict';
 
-    /** @ngInject */
-    function runBlock() {
+  angular
+    .module('artside')
+    .run(runBlock);
 
-    }
+  /** @ngInject */
+  function runBlock() {
+
+  }
 })();

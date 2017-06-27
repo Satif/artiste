@@ -1,16 +1,14 @@
-(function() {
+(function () {
 
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.home')
-        .controller('HomeController', HomeController);
+  angular
+    .module('app.home')
+    .controller('HomeController', HomeController);
 
-    /** @ngInject */
-    function HomeController() {
-
-        var vm = this;
-        
-    }
+  /** @ngInject */
+  function HomeController(data) {
+    
+  }
 
 })();

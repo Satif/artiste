@@ -9,8 +9,7 @@
     /** @ngInject */
     function SidebarController() {
 
-        var vm = this;
-        
+
     }
 
 })();

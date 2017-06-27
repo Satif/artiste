@@ -1,16 +1,14 @@
-(function() {
+(function () {
 
-    'use strict';
+  'use strict';
 
-    angular
-        .module('rin')
-        .controller('AppController', AppController);
+  angular
+    .module('artside')
+    .controller('AppController', AppController);
 
-    /** @ngInject */
-	function AppController()  {
+  /** @ngInject */
+  function AppController() {
 
-        var vm = this;
-        
-    }
+  }
 
 })();
