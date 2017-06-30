@@ -1,22 +1,23 @@
-(function() {
+(function () {
 
-    'use strict';
+  'use strict';
 
-    angular
-        .module('artside', [
+  angular
+    .module('artside', [
 
-            // Core
-            'app.core',
+      // Core
+      'app.core',
+      'app.components',
 
-            // Navigation
-            'app.sidebar',
-            'app.topbar',
+      // Navigation
+      'app.sidebar',
+      'app.topbar',
 
-            // Views
-            'app.login',
-            'app.register',
-            'app.home',
-            'app.admin'
+      // Views
+      'app.login',
+      'app.register',
+      'app.home',
+      'app.admin'
 
-        ]);
+    ]);
 })();

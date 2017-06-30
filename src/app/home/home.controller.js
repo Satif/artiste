@@ -7,8 +7,11 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController(data) {
+  function HomeController(Data) {
+    console.log(Data)
+    var self = this;
     
+    self.data = Data;
   }
 
 })();

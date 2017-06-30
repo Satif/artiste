@@ -1,10 +1,7 @@
 <div class="wrapper pt-100">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-3">
-				asdasd
-			</div>
-      <div class="col-xs-9">
+      <div class="col-xs-12">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
@@ -20,19 +17,19 @@
                 <form ng-submit="vm.save()">
                   <div class="form-group">
                     <label for="text1">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first_title" id="text1" placeholder="Vimeo Video">
+                    <input type="text" class="form-control" ng-model="vm.data.first.first_title" id="text1">
                   </div>
                   <div class="form-group">
                     <label for="text2">Підзаголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first_subtitle" id="text2" placeholder="Stunning Vimeo Video Background">
+                    <input type="text" class="form-control" ng-model="vm.data.first.first_subtitle" id="text2">
                   </div>
                   <div class="form-group">
                     <label for="text3">Текст кнопки</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first_btnText" id="text3" placeholder="PLAY VIDEO">
+                    <input type="text" class="form-control" ng-model="vm.data.first.first_btnText" id="text3">
                   </div>
                   <div class="form-group">
                     <label for="text4">Відео ID (Vimeo video id)</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first_videoId" id="text4" placeholder="Відео ID">
+                    <input type="text" class="form-control" ng-model="vm.data.first.first_videoId" id="text4">
                   </div>
                   
                   <button type="submit" class="btn btn-default">Зберегти</button>
@@ -40,34 +37,88 @@
               </div>
             </div>
           </div>
+          
+          
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collapsible Group Item #2
+                  2 блок
                 </a>
               </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <form ng-submit="vm.save()">
+                  <div class="form-group">
+                    <label for="inp1">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.second.second_title" id="inp1">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp2">Текст</label>
+                    <textarea rows="3" class="form-control" ng-model="vm.data.second.second_text" id="inp2"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp3">Лого</label>
+                    <input type="file" id="inp3" ng-model="vm.data.second.second_logo" >
+                    <p class="help-block">Логотип (192x189).</p>
+                  </div>
+
+                  <button type="submit" class="btn btn-default">Зберегти</button>
+                </form>
               </div>
             </div>
           </div>
+          
+          
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Collapsible Group Item #3
+                  3 блок
                 </a>
               </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <form ng-submit="vm.addNewThird(vm.newThird)" style="margin-bottom: 15px;">
+                  <div class="form-group">
+                    <label for="inp4">Цифра</label>
+                    <input type="number" class="form-control" ng-model="vm.newThird.number" id="inp4" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp5">Текст</label>
+                    <input type="text" class="form-control" ng-model="vm.newThird.text" id="inp5" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp6">Іконка</label>
+                    <input type="text" class="form-control" ng-model="vm.newThird.icon" id="inp6" required>
+                  </div>
+                  
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default">Зберегти</button>
+                  </div>
+                </form>
+
+                <section class="result-boxes">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4 nopadding" ng-repeat="third in vm.data.third">
+                        <div class="statistic result-box result-box-first">
+                          <div class="result-wrap clearfix">
+                            <i class="icon icon-{{third.icon}}"></i>
+                            <span class="timer">{{third.number}}</span>
+                            <span class="counter-text">{{third.text}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 		</div>

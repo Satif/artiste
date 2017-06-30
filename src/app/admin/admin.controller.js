@@ -12,6 +12,11 @@
     vm.data = Data;
     vm.save = save;
 
+    vm.addNewThird = addNewThird;
+
+    var dataStorage = Backendless.Data.of('data');
+    var thirdStorage = Backendless.Data.of('Third');
+    
     //////////////
     
     function save() {
@@ -22,6 +27,14 @@
         });
     }
 
+    function addNewThird(newItem) {
+      HomeService
+        .saveThird(newItem)
+        .then(function (resp) {
+          var newThirdArray = vm.data.third;
+          dataStorage.setRelation(vm.data, 'third:Third:n', [ resp ]);
+        });
+    }
 
   }
 })();

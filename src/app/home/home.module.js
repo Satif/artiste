@@ -1,22 +1,27 @@
-(function() {
+(function () {
 
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.home', [])
-        .config(config);
+  angular
+    .module('app.home', [])
+    .config(config);
 
-    /** @ngInject */
-    function config($stateProvider) {
+  /** @ngInject */
+  function config($stateProvider) {
 
-        $stateProvider.state('app.home', {
-            url  : '/home',
-            views  : {
-                'content@app': {
-                    templateUrl: 'app/home/home.html',
-                    controller : 'HomeController as vm'
-                }
-            }
-        });
-    }
+    $stateProvider.state('app.home', {
+      url: '/home',
+      views: {
+        'content@app': {
+          templateUrl: 'app/home/home.html',
+          controller: 'HomeController as homeCtrl'
+        }
+      },
+      resolve: {
+        Data: function(HomeService) {
+          return HomeService.getAllData();
+        }
+      }
+    });
+  }
 })();
