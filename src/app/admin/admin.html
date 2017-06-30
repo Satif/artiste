@@ -81,7 +81,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
-                <form ng-submit="vm.addNewThird(vm.newThird)" style="margin-bottom: 15px;">
+                <form name="thirdForm" ng-submit="vm.addThird(vm.newThird)" style="margin-bottom: 15px;">
                   <div class="form-group">
                     <label for="inp4">Цифра</label>
                     <input type="number" class="form-control" ng-model="vm.newThird.number" id="inp4" required>
@@ -93,17 +93,23 @@
                   <div class="form-group">
                     <label for="inp6">Іконка</label>
                     <input type="text" class="form-control" ng-model="vm.newThird.icon" id="inp6" required>
+                    <div class="help-block">
+                      <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
+                    </div>
                   </div>
                   
                   <div class="text-right">
-                    <button type="submit" class="btn btn-default">Зберегти</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="thirdForm.$invalid">Зберегти</button>
                   </div>
                 </form>
 
                 <section class="result-boxes">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-md-4 nopadding" ng-repeat="third in vm.data.third">
+                      <div class="col-md-4 nopadding" ng-repeat="third in vm.data.third track by $index">
+                        <span class="icon_pencil edit-btn" ng-click="vm.editThird(third)"></span>
+                        <span class="icon_close delete-btn" ng-click="vm.removeThird(third)"></span>
+                        
                         <div class="statistic result-box result-box-first">
                           <div class="result-wrap clearfix">
                             <i class="icon icon-{{third.icon}}"></i>

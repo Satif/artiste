@@ -14,7 +14,8 @@
     return {
       getAllData: getAllData,
       save: save,
-      saveThird: saveThird
+      saveThird: saveThird,
+      removeThird: removeThird
     };
 
     function getAllData() {
@@ -44,10 +45,26 @@
       return deferred.promise;
     }
 
-    function saveThird(data) {
+    function saveThird(objectId, data) {
       var deferred = $q.defer();
 
       thirdStorage.save(data)
+        .then(function (savedObject) {
+          dataStorage.addRelation(objectId, 'third', [savedObject]);
+          
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeThird(id) {
+      var deferred = $q.defer();
+
+      thirdStorage.remove(id)
         .then(function (savedObject) {
           deferred.resolve(savedObject);
         })

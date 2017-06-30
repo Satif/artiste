@@ -7,15 +7,15 @@
 
   /* @ngInject */
   function AdminController(HomeService, Data) {
-    var vm = this;
+    var vm = this,
+        objectId = Data.objectId;
 
     vm.data = Data;
     vm.save = save;
 
-    vm.addNewThird = addNewThird;
-
-    var dataStorage = Backendless.Data.of('data');
-    var thirdStorage = Backendless.Data.of('Third');
+    vm.addThird = addThird;
+    vm.editThird = editThird;
+    vm.removeThird = removeThird;
     
     //////////////
     
@@ -27,13 +27,35 @@
         });
     }
 
-    function addNewThird(newItem) {
+    function addThird(item) {
       HomeService
-        .saveThird(newItem)
+        .saveThird(objectId, item)
         .then(function (resp) {
-          var newThirdArray = vm.data.third;
-          dataStorage.setRelation(vm.data, 'third:Third:n', [ resp ]);
+          if (!item.objectId) {
+            vm.data.third.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+          
+          clearThirdForm();
         });
+    }
+
+    function editThird(item) {
+      vm.newThird = item;
+    }
+
+    function removeThird(item) {
+      HomeService
+        .removeThird(item.objectId)
+        .then(function () {
+          var index = vm.data.third.indexOf(item);
+          vm.data.third.splice(index, 1);
+        });
+    }
+    
+    function clearThirdForm() {
+      vm.newThird = {};
     }
 
   }
