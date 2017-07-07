@@ -3,33 +3,35 @@
 		<div class="row">
       <div class="col-xs-12">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+          <!--SLIDER-->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
+            <div class="panel-heading" role="tab" id="headingSlider">
               <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSlider" aria-expanded="true" aria-controls="collapseSlider">
                   1 блок (Slider)
                 </a>
               </h4>
             </div>
             
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseSlider" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSlider">
               <div class="panel-body">
                 <form ng-submit="vm.save()">
                   <div class="form-group">
                     <label for="text1">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first.first_title" id="text1">
+                    <input type="text" class="form-control" ng-model="vm.data.slider.title" id="text1">
                   </div>
                   <div class="form-group">
                     <label for="text2">Підзаголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first.first_subtitle" id="text2">
+                    <input type="text" class="form-control" ng-model="vm.data.slider.subtitle" id="text2">
                   </div>
                   <div class="form-group">
                     <label for="text3">Текст кнопки</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first.first_btnText" id="text3">
+                    <input type="text" class="form-control" ng-model="vm.data.slider.btnText" id="text3">
                   </div>
                   <div class="form-group">
                     <label for="text4">Відео ID (Vimeo video id)</label>
-                    <input type="text" class="form-control" ng-model="vm.data.first.first_videoId" id="text4">
+                    <input type="text" class="form-control" ng-model="vm.data.slider.videoId" id="text4">
                   </div>
                   
                   <button type="submit" class="btn btn-default">Зберегти</button>
@@ -37,30 +39,33 @@
               </div>
             </div>
           </div>
-          
-          
+          <!--END SLIDER-->
+
+
+          <!--WELCOME-->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
+            <div class="panel-heading" role="tab" id="headingWelcome">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseWelcome" aria-expanded="false" aria-controls="collapseWelcome">
                   2 блок (Welcome)
                 </a>
               </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+
+            <div id="collapseWelcome" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingWelcome">
               <div class="panel-body">
                 <form ng-submit="vm.save()">
                   <div class="form-group">
                     <label for="inp1">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.second.second_title" id="inp1">
+                    <input type="text" class="form-control" ng-model="vm.data.welcome.title" id="inp1">
                   </div>
                   <div class="form-group">
                     <label for="inp2">Текст</label>
-                    <textarea rows="3" class="form-control" ng-model="vm.data.second.second_text" id="inp2"></textarea>
+                    <textarea rows="3" class="form-control" ng-model="vm.data.welcome.text" id="inp2"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="inp3">Лого</label>
-                    <input type="file" id="inp3" ng-model="vm.data.second.second_logo" >
+                    <input type="file" id="inp3" ng-model="vm.data.welcome.logo" >
                     <p class="help-block">Логотип (192x189).</p>
                   </div>
 
@@ -69,52 +74,54 @@
               </div>
             </div>
           </div>
+          <!--END WELCOME-->
 
 
+          <!--ACHIEVEMENTS-->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
+            <div class="panel-heading" role="tab" id="headingAchievements">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAchievements" aria-expanded="false" aria-controls="collapseAchievements">
                   3 блок (Achievements)
                 </a>
               </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseAchievements" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAchievements">
               <div class="panel-body">
-                <form name="thirdForm" ng-submit="vm.addThird(vm.newThird)" style="margin-bottom: 15px;">
+                <form name="achievementForm" ng-submit="vm.addAchievement(vm.newAchievement)" class="mb-20">
                   <div class="form-group">
                     <label for="inp4">Цифра</label>
-                    <input type="number" class="form-control" ng-model="vm.newThird.number" id="inp4" required>
+                    <input type="number" class="form-control" ng-model="vm.newAchievement.number" id="inp4" required>
                   </div>
                   <div class="form-group">
                     <label for="inp5">Текст</label>
-                    <input type="text" class="form-control" ng-model="vm.newThird.text" id="inp5" required>
+                    <input type="text" class="form-control" ng-model="vm.newAchievement.text" id="inp5" required>
                   </div>
                   <div class="form-group">
                     <label for="inp6">Іконка</label>
-                    <input type="text" class="form-control" ng-model="vm.newThird.icon" id="inp6" required>
+                    <input type="text" class="form-control" ng-model="vm.newAchievement.icon" id="inp6" required>
                     <div class="help-block">
                       <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
                     </div>
                   </div>
                   
                   <div class="text-right">
-                    <button type="submit" class="btn btn-default" ng-disabled="thirdForm.$invalid">Зберегти</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="achievementForm.$invalid">Зберегти</button>
                   </div>
                 </form>
 
                 <section class="result-boxes">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-md-4 nopadding" ng-repeat="third in vm.data.third track by $index">
-                        <span class="icon_pencil edit-btn" ng-click="vm.editThird(third)"></span>
-                        <span class="icon_close delete-btn" ng-click="vm.removeThird(third)"></span>
+                      <div class="col-md-4 nopadding" ng-repeat="achievement in vm.data.achievements track by $index">
+                        <span class="icon_pencil edit-btn" ng-click="vm.editAchievement(achievement)"></span>
+                        <span class="icon_close delete-btn" ng-click="vm.removeAchievement(achievement)"></span>
                         
                         <div class="statistic result-box result-box-first">
                           <div class="result-wrap clearfix">
-                            <i class="icon icon-{{third.icon}}"></i>
-                            <span class="timer">{{third.number}}</span>
-                            <span class="counter-text">{{third.text}}</span>
+                            <i class="icon icon-{{achievement.icon}}"></i>
+                            <span class="timer">{{achievement.number}}</span>
+                            <span class="counter-text">{{achievement.text}}</span>
                           </div>
                         </div>
                       </div>
@@ -124,58 +131,62 @@
               </div>
             </div>
           </div>
+          <!--END ACHIEVEMENTS-->
 
 
+          <!--SERVICES-->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFourth">
+            <div class="panel-heading" role="tab" id="headingServices">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseServices" aria-expanded="false" aria-controls="collapseServices">
                   4 блок (Services)
                 </a>
               </h4>
             </div>
-            <div id="collapseFourth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourth">
+            <div id="collapseServices" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingServices">
               <div class="panel-body">
-                <form name="fourthForm" ng-submit="vm.save()">
+                <form name="servicesForm" ng-submit="vm.save()" class="mb-20">
                   <div class="form-group">
                     <label for="inp10">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.fourth.title" id="inp10">
+                    <input type="text" class="form-control" ng-model="vm.data.services.title" id="inp10">
                   </div>
                   <div class="form-group">
                     <label for="inp11">Підзаголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.data.fourth.subtitle" id="inp11">
+                    <input type="text" class="form-control" ng-model="vm.data.services.subtitle" id="inp11">
                   </div>
                   <div class="text-right">
                     <button type="submit" class="btn btn-default">Зберегти</button>
                   </div>
                 </form>
 
-                <form name="serviceForm" ng-submit="vm.addService(vm.newService)" style="margin-bottom: 15px;">
-                  <div class="form-group">
-                    <label for="inp7">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.newService.title" id="inp7" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp8">Текст</label>
-                    <input type="text" class="form-control" ng-model="vm.newService.text" id="inp8" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp9">Іконка</label>
-                    <input type="text" class="form-control" ng-model="vm.newService.icon" id="inp9" required>
-                    <div class="help-block">
-                      <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
+                <div class="jumbotron">
+                  <form name="serviceForm" ng-submit="vm.addService(vm.newService)" style="margin-bottom: 15px;">
+                    <div class="form-group">
+                      <label for="inp7">Заголовок</label>
+                      <input type="text" class="form-control" ng-model="vm.newService.title" id="inp7" required>
                     </div>
-                  </div>
+                    <div class="form-group">
+                      <label for="inp8">Текст</label>
+                      <input type="text" class="form-control" ng-model="vm.newService.text" id="inp8" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp9">Іконка</label>
+                      <input type="text" class="form-control" ng-model="vm.newService.icon" id="inp9" required>
+                      <div class="help-block">
+                        <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
+                      </div>
+                    </div>
 
-                  <div class="text-right">
-                    <button type="submit" class="btn btn-default" ng-disabled="serviceForm.$invalid">Зберегти</button>
-                  </div>
-                </form>
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-default" ng-disabled="serviceForm.$invalid">Зберегти</button>
+                    </div>
+                  </form>
+                </div>
 
                 <section class="result-boxes">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-md-4 service-item" ng-repeat="service in vm.data.fourth.services track by $index">
+                      <div class="col-md-4 service-item" ng-repeat="service in vm.data.services.services track by $index">
                         <span class="icon_pencil edit-btn" ng-click="vm.editService(service)"></span>
                         <span class="icon_close delete-btn" ng-click="vm.removeService(service)"></span>
 
@@ -193,48 +204,51 @@
               </div>
             </div>
           </div>
+          <!--END SERVICES-->
 
 
-
+          <!--ORDERS-->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFifth">
+            <div class="panel-heading" role="tab" id="headingOrders">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOrders" aria-expanded="false" aria-controls="collapseOrders">
                   5 блок (Orders)
                 </a>
               </h4>
             </div>
-            <div id="collapseFifth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifth">
+            <div id="collapseOrders" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOrders">
               <div class="panel-body">
-                <form name="orderForm" ng-submit="vm.addOrder(vm.newOrder)" style="margin-bottom: 15px;">
-                  <div class="form-group">
-                    <label for="inp14">Заголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.newOrder.title" id="inp14" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp15">Підзаголовок</label>
-                    <input type="text" class="form-control" ng-model="vm.newOrder.subtitle" id="inp15" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp16">Текст</label>
-                    <input type="text" class="form-control" ng-model="vm.newOrder.text" id="inp16" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp18">Текст кнопки</label>
-                    <input type="text" class="form-control" ng-model="vm.newOrder.btnText" id="inp18" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inp17">Картинка</label>
-                    <input type="file" id="inp17" ng-model="vm.newOrder.image" id="file" name="file">
-                    <p class="help-block">Логотип (570x408).</p>
-                  </div>
+                <div class="jumbotron">
+                  <form name="orderForm" ng-submit="vm.addOrder(vm.newOrder)" class="mb-20">
+                    <div class="form-group">
+                      <label for="inp14">Заголовок</label>
+                      <input type="text" class="form-control" ng-model="vm.newOrder.title" id="inp14" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp15">Підзаголовок</label>
+                      <input type="text" class="form-control" ng-model="vm.newOrder.subtitle" id="inp15" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp16">Текст</label>
+                      <input type="text" class="form-control" ng-model="vm.newOrder.text" id="inp16" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp18">Текст кнопки</label>
+                      <input type="text" class="form-control" ng-model="vm.newOrder.btnText" id="inp18" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp17">Картинка</label>
+                      <input type="file" id="inp17" ng-model="vm.newOrder.image" id="file" name="file">
+                      <div class="help-block">Логотип (570x408).</div>
+                    </div>
 
-                  <div class="text-right">
-                    <button type="submit" class="btn btn-default" ng-disabled="orderForm.$invalid">Зберегти</button>
-                  </div>
-                </form>
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-default" ng-disabled="orderForm.$invalid">Зберегти</button>
+                    </div>
+                  </form>
+                </div>
 
-                <section class="section-wrap promo-section">
+                <section class="promo-section">
                   <div class="owl-theme">
                     <div class="item col-xs-4" ng-repeat="order in vm.data.orders track by $index">
                       <span class="icon_pencil edit-btn" ng-click="vm.editOrder(order)"></span>
@@ -243,7 +257,7 @@
                       <div class="row">
 
                         <div class="col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                          <img ng-src="{{order.image}}" alt="">
+                          <img ng-src="{{order.image}}" src="assets/images/promo_img_1.png" alt="">
                         </div>
 
                         <div class="col-md-6 promo-description">
@@ -260,8 +274,166 @@
               </div>
             </div>
           </div>
+          <!--END ORDERS-->
 
 
+          <!--WORKS-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingWorks">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseWorks" aria-expanded="false" aria-controls="collapseWorks">
+                  6 блок (Works)
+                </a>
+              </h4>
+            </div>
+            <div id="collapseWorks" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingWorks">
+              <div class="panel-body">
+                <form name="portfolioForm" ng-submit="vm.save()" class="mb-20">
+                  <div class="form-group">
+                    <label for="inp30">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.works.title" id="inp30">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp31">Підзаголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.works.subtitle" id="inp31">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp32">Текст кнопки</label>
+                    <input type="text" class="form-control" ng-model="vm.data.works.btnText" id="inp32">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp33">Текст зліва від кнопки</label>
+                    <input type="text" class="form-control" ng-model="vm.data.works.btnDescription" id="inp33">
+                  </div>
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default">Зберегти</button>
+                  </div>
+                </form>
+
+                <div class="jumbotron">
+                  <form name="portForm" ng-submit="vm.addWork(vm.newWork)" class="mb-20">
+                    <div class="form-group">
+                      <label for="inp40">Заголовок</label>
+                      <input type="text" class="form-control" ng-model="vm.newWork.name" id="inp40" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp41">Короткий опис</label>
+                      <input type="text" class="form-control" ng-model="vm.newWork.smallDescription" id="inp41" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp42">Повний опис</label>
+                      <textarea id="inp42"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp43">Головне фото</label>
+                      <input type="file" id="inp43" ng-model="vm.newWork.photoMain" name="file">
+                      <div class="help-block">Логотип (768x624).</div>
+                    </div>
+
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-default" ng-disabled="portForm.$invalid">Зберегти</button>
+                    </div>
+                  </form>
+                </div>
+
+                <section class="works-grid-3-col-wide pb-0" id="portfolio">
+                  <div class="grid-3-col grid-wide grid-gutter grayscale">
+
+                    <div class="work-item web-design print" ng-repeat="work in vm.data.works.works track by $index">
+                      <div class="work-img">
+                        <span class="icon_pencil edit-btn" ng-click="vm.editWork(work)"></span>
+                        <span class="icon_close delete-btn" ng-click="vm.removeWork(work)"></span>
+
+                        <img src="assets/images/project_1.jpg" alt="">
+                        <div class="work-overlay">
+                          <div class="work-description">
+                            <h3>
+                              <a href="portfolio-single">{{work.name}}</a>
+                            </h3>
+                            <span>
+                              <a href="#">{{work.smallDescription}}</a>
+                            </span>
+                          </div>
+                          <a href="#" class="lightbox-gallery btn btn-lg btn-transparent" title="{{work.name}}">View Work</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+
+              </div>
+            </div>
+          </div>
+          <!--END WORKS-->
+
+
+          <!--PROCESSES-->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingProcesses">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseProcesses" aria-expanded="false" aria-controls="collapseProcesses">
+                  7 блок (Processes)
+                </a>
+              </h4>
+            </div>
+            <div id="collapseProcesses" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingProcesses">
+              <div class="panel-body">
+                <form name="processesForm" ng-submit="vm.save()" class="mb-20">
+                  <div class="form-group">
+                    <label for="inp50">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.processes.title" id="inp50">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp51">Підзаголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.processes.subtitle" id="inp51">
+                  </div>
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default">Зберегти</button>
+                  </div>
+                </form>
+
+                <div class="jumbotron">
+                  <form name="processForm" ng-submit="vm.addProcess(vm.newProcess)" class="mb-20">
+                    <div class="form-group">
+                      <label for="inp52">Назва</label>
+                      <input type="text" class="form-control" ng-model="vm.newProcess.name" id="inp52" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inp54">Іконка</label>
+                      <input type="text" class="form-control" ng-model="vm.newProcess.icon" id="inp54" required>
+                      <div class="help-block">
+                        <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
+                      </div>
+                    </div>
+
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-default" ng-disabled="processForm.$invalid">Зберегти</button>
+                    </div>
+                  </form>
+                </div>
+
+                <section class="process" style="background-image: url(assets/images/process_bg.jpg); padding: 20px 0 0;">
+                  <div class="row">
+
+                    <div class="col-sm-5ths" ng-repeat="process in vm.data.processes.processes track by $index">
+                      <div class="process-item">
+                        <span class="icon_pencil edit-btn" ng-click="vm.editProcess(process)"></span>
+                        <span class="icon_close delete-btn" ng-click="vm.removeProcess(process)"></span>
+
+                        <div class="process-wrap text-center">
+                          <i class="icon icon-{{process.icon}}"></i>
+                          <h3>{{process.name}}</h3>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <!--END PROCESSES-->
 
         </div>
       </div>

@@ -13,10 +13,12 @@
     vm.data = Data;
     vm.save = save;
 
-    vm.addThird = addThird;
-    vm.editThird = editThird;
-    vm.removeThird = removeThird;
+    // ACHIEVEMENTS
+    vm.addAchievement = addAchievement;
+    vm.editAchievement = editAchievement;
+    vm.removeAchievement = removeAchievement;
 
+    // SERVICES
     vm.addService = addService;
     vm.editService = editService;
     vm.removeService = removeService;
@@ -35,45 +37,49 @@
         });
     }
 
-    function addThird(item) {
+
+    // ACHIEVEMENTS
+    function addAchievement(item) {
       HomeService
-        .saveThird(objectId, item)
+        .saveAchievement(objectId, item)
         .then(function (resp) {
           if (!item.objectId) {
-            vm.data.third.push(resp);
+            vm.data.achievements.push(resp);
           } else {
             item.objectId = resp.objectId;
           }
           
-          clearThirdForm();
+          clearAchievementForm();
         });
     }
 
-    function editThird(item) {
-      vm.newThird = item;
+    function editAchievement(item) {
+      vm.newAchievement = item;
     }
 
-    function removeThird(item) {
+    function removeAchievement(item) {
       HomeService
-        .removeThird(item.objectId)
+        .removeAchievement(item.objectId)
         .then(function () {
-          var index = vm.data.third.indexOf(item);
-          vm.data.third.splice(index, 1);
+          var index = vm.data.achievements.indexOf(item);
+          vm.data.achievements.splice(index, 1);
         });
     }
     
-    function clearThirdForm() {
-      vm.newThird = {};
+    function clearAchievementForm() {
+      vm.newAchievement = {};
     }
 
-    function addService(item) {
-      var objectId = Data.fourth.objectId;
 
-        HomeService
+    // SERVICES
+    function addService(item) {
+      var objectId = Data.services.objectId;
+
+      HomeService
         .saveService(objectId, item)
         .then(function (resp) {
           if (!item.objectId) {
-            vm.data.fourth.services.push(resp);
+            vm.data.services.services.push(resp);
           } else {
             item.objectId = resp.objectId;
           }
@@ -90,8 +96,8 @@
       HomeService
         .removeService(item.objectId)
         .then(function () {
-          var index = vm.data.fourth.services.indexOf(item);
-          vm.data.fourth.services.splice(index, 1);
+          var index = vm.data.services.services.indexOf(item);
+          vm.data.services.services.splice(index, 1);
         });
     }
 
@@ -102,28 +108,29 @@
 
 
 
-    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+    // document.getElementById('file').addEventListener('change', handleFileSelect, false);
 
-    var orderFile;
-    function handleFileSelect(evt) {
-      orderFile = evt.target.files; // FileList object
-    }
+    // var orderFile;
+    // function handleFileSelect(evt) {
+    //   orderFile = evt.target.files; // FileList object
+    // }
+    //
+    // vm.uploadFileFunc = uploadFileFunc;
+    //
+    // function uploadFileFunc() {
+    //   if (!orderFile) {
+    //     return;
+    //   }
+    //
+    //   Backendless.Files.upload(file, "media", true)
+    //     .then(function(resp) {
+    //       console.log(resp)
+    //     });
+    // }
 
-    vm.uploadFileFunc = uploadFileFunc;
-
-    function uploadFileFunc() {
-      if (!orderFile) {
-        return;
-      }
-
-      Backendless.Files.upload(file, "media", true)
-        .then(function(resp) {
-          console.log(resp)
-        });
-    }
 
 
-
+    // ORDERS
     function addOrder(item) {
       HomeService
         .saveOrder(objectId, item)
@@ -153,6 +160,85 @@
 
     function clearOrderForm() {
       vm.newService = {};
+    }
+
+
+    // WORKS
+    vm.addWork = addWork;
+    vm.editWork = editWork;
+    vm.removeWork = removeWork;
+
+    function addWork(item) {
+      var objectId = Data.works.objectId;
+
+      HomeService
+        .saveWork(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.works.works.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearWorkForm();
+        });
+    }
+
+    function editWork(item) {
+      vm.newWork = item;
+    }
+
+    function removeWork(item) {
+      HomeService
+        .removeWork(item.objectId)
+        .then(function () {
+          var index = vm.data.works.works.indexOf(item);
+          vm.data.works.works.splice(index, 1);
+        });
+    }
+
+    function clearWorkForm() {
+      vm.newWork = {};
+    }
+
+
+
+    // PROCESSES
+    vm.addProcess = addProcess;
+    vm.editProcess = editProcess;
+    vm.removeProcess = removeProcess;
+
+    function addProcess(item) {
+      var objectId = Data.processes.objectId;
+
+      HomeService
+        .saveProcess(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.processes.processes.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearProcessForm();
+        });
+    }
+
+    function editProcess(item) {
+      vm.newProcess = item;
+    }
+
+    function removeProcess(item) {
+      HomeService
+        .removeProcess(item.objectId)
+        .then(function () {
+          var index = vm.data.processes.processes.indexOf(item);
+          vm.data.processes.processes.splice(index, 1);
+        });
+    }
+
+    function clearProcessForm() {
+      vm.newProcess = {};
     }
 
   }

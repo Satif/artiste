@@ -1,0 +1,20 @@
+<div class="grid-3-col grid-wide grid-gutter grayscale">
+
+  <div class="work-item web-design print" ng-repeat="work in worksCtrl.worksData">
+    <div class="work-img">
+      <img src="assets/images/project_1.jpg" alt="">
+      <div class="work-overlay">
+        <div class="work-description">
+          <h3>
+            <a href="portfolio-single">{{work.name}}</a>
+          </h3>
+          <span>
+            <a href="#">{{work.smallDescription}}</a>
+          </span>
+        </div>
+        <a href="#" class="lightbox-gallery btn btn-lg btn-transparent" title="{{work.name}}">View Work</a>
+      </div>
+    </div>
+  </div>
+
+</div>
