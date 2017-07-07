@@ -7,7 +7,7 @@
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  1 блок
+                  1 блок (Slider)
                 </a>
               </h4>
             </div>
@@ -43,7 +43,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  2 блок
+                  2 блок (Welcome)
                 </a>
               </h4>
             </div>
@@ -69,13 +69,13 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  3 блок
+                  3 блок (Achievements)
                 </a>
               </h4>
             </div>
@@ -124,7 +124,145 @@
               </div>
             </div>
           </div>
-          
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFourth">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth">
+                  4 блок (Services)
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFourth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourth">
+              <div class="panel-body">
+                <form name="fourthForm" ng-submit="vm.save()">
+                  <div class="form-group">
+                    <label for="inp10">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.fourth.title" id="inp10">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp11">Підзаголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.data.fourth.subtitle" id="inp11">
+                  </div>
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default">Зберегти</button>
+                  </div>
+                </form>
+
+                <form name="serviceForm" ng-submit="vm.addService(vm.newService)" style="margin-bottom: 15px;">
+                  <div class="form-group">
+                    <label for="inp7">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.newService.title" id="inp7" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp8">Текст</label>
+                    <input type="text" class="form-control" ng-model="vm.newService.text" id="inp8" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp9">Іконка</label>
+                    <input type="text" class="form-control" ng-model="vm.newService.icon" id="inp9" required>
+                    <div class="help-block">
+                      <a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">Список іконок</a>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default" ng-disabled="serviceForm.$invalid">Зберегти</button>
+                  </div>
+                </form>
+
+                <section class="result-boxes">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4 service-item" ng-repeat="service in vm.data.fourth.services track by $index">
+                        <span class="icon_pencil edit-btn" ng-click="vm.editService(service)"></span>
+                        <span class="icon_close delete-btn" ng-click="vm.removeService(service)"></span>
+
+                        <div class="service-item-box icon-effect-1 icon-effect-1a text-center">
+                          <a href="#">
+                            <i class="icon icon-{{service.icon}} hi-icon"></i>
+                          </a>
+                          <h3>{{service.title}}</h3>
+                          <p>{{service.text}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFifth">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+                  5 блок (Orders)
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFifth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifth">
+              <div class="panel-body">
+                <form name="orderForm" ng-submit="vm.addOrder(vm.newOrder)" style="margin-bottom: 15px;">
+                  <div class="form-group">
+                    <label for="inp14">Заголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.newOrder.title" id="inp14" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp15">Підзаголовок</label>
+                    <input type="text" class="form-control" ng-model="vm.newOrder.subtitle" id="inp15" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp16">Текст</label>
+                    <input type="text" class="form-control" ng-model="vm.newOrder.text" id="inp16" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp18">Текст кнопки</label>
+                    <input type="text" class="form-control" ng-model="vm.newOrder.btnText" id="inp18" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inp17">Картинка</label>
+                    <input type="file" id="inp17" ng-model="vm.newOrder.image" id="file" name="file">
+                    <p class="help-block">Логотип (570x408).</p>
+                  </div>
+
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-default" ng-disabled="orderForm.$invalid">Зберегти</button>
+                  </div>
+                </form>
+
+                <section class="section-wrap promo-section">
+                  <div class="owl-theme">
+                    <div class="item col-xs-4" ng-repeat="order in vm.data.orders track by $index">
+                      <span class="icon_pencil edit-btn" ng-click="vm.editOrder(order)"></span>
+                      <span class="icon_close delete-btn" ng-click="vm.removeOrder(order)"></span>
+
+                      <div class="row">
+
+                        <div class="col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                          <img ng-src="{{order.image}}" alt="">
+                        </div>
+
+                        <div class="col-md-6 promo-description">
+                          <p class="subheading">{{order.title}}</p>
+                          <h3 class="color-white">{{order.subtitle}}</h3>
+                          <p class="mb-30">{{order.text}}</p>
+                          <a href="#" class="btn btn-lg btn-color">{{order.btnText}}</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
       </div>
 		</div>

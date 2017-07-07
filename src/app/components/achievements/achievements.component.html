@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-4 nopadding" ng-repeat="third in achievementsCtrl.listData">
+      <div class="statistic result-box result-box-first">
+        <div class="result-wrap clearfix">
+          <i class="icon icon-{{third.icon}}"></i>
+          <span class="timer" data-from="0" data-to="{{third.number}}"></span>
+          <span class="counter-text">{{third.text}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -211,19 +211,6 @@
 
   angular.element(document).ready(function () {
     setTimeout(function(){
-      /* Counters
-       -------------------------------------------------------*/
-      $('.statistic').appear(function () {
-        $('.timer').countTo({
-          speed: 4000,
-          refreshInterval: 60,
-          formatter: function (value, options) {
-            return value.toFixed(options.decimals);
-          }
-        });
-      });
-
-
       /* Progress Bars
        -------------------------------------------------------*/
       var $section = $('#animated-skills').appear(function () {
@@ -323,83 +310,6 @@
     (function ($) {
       "use strict";
 
-      $("#owl-partners").owlCarousel({
-
-        autoPlay: 3000,
-        pagination: false,
-        itemsCustom: [
-          [0, 2],
-          [450, 2],
-          [700, 3],
-          [1000, 3],
-          [1200, 4],
-          [1400, 5],
-          [1600, 6]
-        ],
-
-      })
-
-      // Owl Single
-      $("#owl-single").owlCarousel({
-
-        slideSpeed: 300,
-        singleItem: true,
-        paginationSpeed: 200,
-        pagination: true,
-        paginationNumbers: true
-
-      });
-
-      // Promo Section
-      var owlPromo = $("#owl-promo");
-      owlPromo.owlCarousel({
-
-        slideSpeed: 300,
-        pagination: false,
-        paginationSpeed: 400,
-        singleItem: true
-
-      });
-
-      // Blog Gallery Post
-      var owlBlog = $("#owl-blog");
-      owlBlog.owlCarousel({
-
-        slideSpeed: 300,
-        pagination: false,
-        paginationSpeed: 400,
-        itemsCustom: [
-          [0, 1],
-          [450, 1],
-          [1200, 2],
-        ],
-
-      });
-
-
-      var owlRelated = $("#owl-related-works");
-      owlRelated.owlCarousel({
-
-        slideSpeed: 300,
-        paginationSpeed: 400,
-        items: 3,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3],
-        pagination: false
-
-      });
-
-      // Custom Navigation Events
-      $(".next").on('click', function () {
-        owlPromo.trigger('owl.next');
-        owlBlog.trigger('owl.next');
-        owlRelated.trigger('owl.next');
-      })
-      $(".prev").on('click', function () {
-        owlPromo.trigger('owl.prev');
-        owlBlog.trigger('owl.prev');
-        owlRelated.trigger('owl.prev');
-      });
 
 
       // Testimonials
