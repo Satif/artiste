@@ -1,0 +1,22 @@
+<div class="row team-row">
+  <div class="col-md-4 col-sm-6 team-wrap" ng-repeat="team in teamsCtrl.teamsData track by $index">
+    <div class="team-member text-center">
+      <div class="team-img">
+        <img src="assets/images/team_1.jpg" alt="">
+        <div class="overlay">
+          <div class="team-details text-center">
+            <p ng-if="team.description">
+              {{team.description}}
+            </p>
+            <div class="socials mt-20">
+              <a href="{{team.facebook}}" target="_blank" ng-if="team.facebook"><i class="fa fa-facebook"></i></a>
+              <a href="mailto:{{team.email}}" ng-if="team.email"><i class="fa fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h6 class="team-title">{{team.name}}</h6>
+      <span ng-if="team.position">{{team.position}}</span>
+    </div>
+  </div>
+</div>

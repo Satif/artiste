@@ -1,0 +1,62 @@
+<!--CLIENTS-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span class="collapsed">
+        12 блок (Clients)
+      </span>
+    </h4>
+  </div>
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <form name="clientsForm" ng-submit="vm.save()" class="mb-20">
+        <div class="form-group">
+          <label for="inp100">Заголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.clients.title" id="inp100">
+        </div>
+        <div class="form-group">
+          <label for="inp101">Підзаголовок</label>
+          <input type="text" id="inp101" class="form-control" ng-model="vm.data.clients.subtitle">
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn-default">Зберегти</button>
+        </div>
+      </form>
+
+      <div class="jumbotron">
+        <form name="clientForm" ng-submit="vm.addClient(vm.newClient)" class="mb-20">
+          <div class="form-group">
+            <label for="inp102">Назва</label>
+            <input type="text" class="form-control" ng-model="vm.newClient.name" id="inp102">
+          </div>
+          <div class="form-group">
+            <label for="inp103">Логотип</label>
+            <input type="file" id="inp103" ng-model="vm.newClient.photo" name="file">
+            <div class="help-block">Логотип (570x408).</div>
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="btn btn-default" ng-disabled="clientForm.$invalid">Зберегти</button>
+          </div>
+        </form>
+      </div>
+
+      <section class="clients bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-4 client-logo" ng-repeat="client in vm.data.clients.clients track by $index">
+              <span class="icon_pencil edit-btn" ng-click="vm.editClient(client)"></span>
+              <span class="icon_close delete-btn" ng-click="vm.removeClient(client)"></span>
+
+              <img src="assets/images/client_logo_1.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+<!--END CLIENTS-->

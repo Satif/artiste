@@ -7,15 +7,8 @@
         $('.loader').fadeOut();
         $('.loader-mask').delay(350).fadeOut('slow');
 
-        initMasonry();
-
-
         $(window).trigger("resize");
-        initOwlCarousel();
-        initTextrotator();
         initOnepagenav();
-        initPiechart();
-
     });
   }, 0);
 
@@ -124,223 +117,171 @@
 
 
   /* Text Rotator
-   -------------------------------------------------------*/
-  function initTextrotator() {
-
-    $(".rotate").textrotator({
-      animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
-      separator: ",",
-      speed: 3000
-    });
-
-  }
-
-
-  angular.element(document).ready(function () {
-    setTimeout(function(){
-      /* Lightbox popup
-       -------------------------------------------------------*/
-
-      $('.lightbox-gallery').magnificPopup({
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0, 1]
-        },
-        image: {
-          titleSrc: 'title',
-          verticalFit: true
-        }
-      });
+  //  -------------------------------------------------------*/
+  // function initTextrotator() {
+  //
+  //   $(".rotate").textrotator({
+  //     animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+  //     separator: ",",
+  //     speed: 3000
+  //   });
+  //
+  // }
 
 
-      $(".lightbox-video").magnificPopup();
+  // angular.element(document).ready(function () {
+  //   setTimeout(function(){
+  //     /* Lightbox popup
+  //      -------------------------------------------------------*/
+  //
+  //     $('.lightbox-gallery').magnificPopup({
+  //       type: 'image',
+  //       tLoading: 'Loading image #%curr%...',
+  //       gallery: {
+  //         enabled: true,
+  //         navigateByImgClick: true,
+  //         preload: [0, 1]
+  //       },
+  //       image: {
+  //         titleSrc: 'title',
+  //         verticalFit: true
+  //       }
+  //     });
+  //
+  //
+  //     $(".lightbox-video").magnificPopup();
+  //
+  //
+  //     /* Isotope Filter
+  //      -------------------------------------------------------*/
+  //     $('.portfolio-filter').on('click', 'a', function (e) {
+  //       e.preventDefault();
+  //       var filterValue = $(this).attr('data-filter');
+  //       $container.isotope({filter: filterValue});
+  //
+  //       $('.portfolio-filter a').removeClass('active');
+  //       $(this).closest('a').addClass('active');
+  //
+  //     });
+  //   }, 100);
+  // });
+
+  // /* Masonry
+  //  -------------------------------------------------------*/
+  //
+  // function initMasonry() {
+  //
+  //   var $masonry = $('.masonry-grid');
+  //   $masonry.imagesLoaded(function () {
+  //     $masonry.isotope({
+  //       itemSelector: '.work-item',
+  //       layoutMode: 'masonry',
+  //       percentPosition: true,
+  //       resizable: false,
+  //       isResizeBound: false,
+  //       masonry: {columnWidth: '.work-item.quarter'}
+  //     });
+  //
+  //   });
+  //
+  //   $masonry.isotope();
+  // }
 
 
-      /* Isotope Filter
-       -------------------------------------------------------*/
-      $('.portfolio-filter').on('click', 'a', function (e) {
-        e.preventDefault();
-        var filterValue = $(this).attr('data-filter');
-        $container.isotope({filter: filterValue});
-
-        $('.portfolio-filter a').removeClass('active');
-        $(this).closest('a').addClass('active');
-
-      });
-
-
-      /* Portfolio
-       -------------------------------------------------------*/
-      var $container = $('.works-grid');
-      $container.imagesLoaded(function () {
-        $container.isotope({
-          itemSelector: '.work-item',
-          layoutMode: 'fitRows',
-          percentPosition: true,
-          masonry: {columnWidth: '.work-img'}
-        });
-
-      });
-    }, 100);
-  });
-
-  /* Masonry
-   -------------------------------------------------------*/
-
-  function initMasonry() {
-
-    var $masonry = $('.masonry-grid');
-    $masonry.imagesLoaded(function () {
-      $masonry.isotope({
-        itemSelector: '.work-item',
-        layoutMode: 'masonry',
-        percentPosition: true,
-        resizable: false,
-        isResizeBound: false,
-        masonry: {columnWidth: '.work-item.quarter'}
-      });
-
-    });
-
-    $masonry.isotope();
-  }
-
-
-  angular.element(document).ready(function () {
-    setTimeout(function(){
-      /* Progress Bars
-       -------------------------------------------------------*/
-      var $section = $('#animated-skills').appear(function () {
-
-        function loadDaBars() {
-          var bar = $('.progress-bar');
-          var bar_width = $(this);
-          $(function () {
-            $(bar).each(function () {
-              bar_width = $(this).attr('aria-valuenow');
-              $(this).width(bar_width + '%');
-            });
-          });
-        }
-
-        loadDaBars();
-      });
-
-
-      /* Accordion
-       -------------------------------------------------------*/
-      var allPanels = $(".accordion > .panel-content").hide();
-      allPanels.first().slideDown("easeOutExpo");
-      $(".accordion > .acc-panel > a").first().addClass("active");
-
-      $(".accordion > .acc-panel > a").on('click', function () {
-
-        var current = $(this).parent().next(".panel-content");
-        $(".accordion > .acc-panel > a").removeClass("active");
-        $(this).addClass("active");
-        allPanels.not(current).slideUp("easeInExpo");
-        $(this).parent().next().slideDown("easeOutExpo");
-
-        return false;
-
-      });
-    }, 100);
-  });
+  // angular.element(document).ready(function () {
+  //   setTimeout(function(){
+  //     /* Progress Bars
+  //      -------------------------------------------------------*/
+  //     // var $section = $('#animated-skills').appear(function () {
+  //     //
+  //     //   function loadDaBars() {
+  //     //     var bar = $('.progress-bar');
+  //     //     var bar_width = $(this);
+  //     //     $(function () {
+  //     //       $(bar).each(function () {
+  //     //         bar_width = $(this).attr('aria-valuenow');
+  //     //         $(this).width(bar_width + '%');
+  //     //       });
+  //     //     });
+  //     //   }
+  //     //
+  //     //   loadDaBars();
+  //     // });
+  //
+  //
+  //     /* Accordion
+  //      -------------------------------------------------------*/
+  //     var allPanels = $(".accordion > .panel-content").hide();
+  //     allPanels.first().slideDown("easeOutExpo");
+  //     $(".accordion > .acc-panel > a").first().addClass("active");
+  //
+  //     $(".accordion > .acc-panel > a").on('click', function () {
+  //
+  //       var current = $(this).parent().next(".panel-content");
+  //       $(".accordion > .acc-panel > a").removeClass("active");
+  //       $(this).addClass("active");
+  //       allPanels.not(current).slideUp("easeInExpo");
+  //       $(this).parent().next().slideDown("easeOutExpo");
+  //
+  //       return false;
+  //
+  //     });
+  //   }, 100);
+  // });
 
   /* Pie Charts
    -------------------------------------------------------*/
-  function initPiechart() {
-    $('.chart').appear(function () {
-
-      $('.chart').easyPieChart({
-
-        animate: {
-          duration: 1500,
-          enabled: true
-        },
-        scaleColor: false,
-        trackColor: '#f2f2f2',
-        lineWidth: 10,
-        size: 174,
-        lineCap: 'square',
-
-        onStep: function (from, to, percent) {
-          $(this.el).find('.percent').text(Math.round(percent));
-        }
-      });
-      var chart = window.chart = $('.chart').data('easyPieChart');
-      $('.js_update').on('click', function () {
-        chart.update(Math.random() * 200 - 100);
-      });
-    });
-  }
-
-
-  angular.element(document).ready(function () {
-    setTimeout(function(){
-      /* Flexslider / Masonry
-       -------------------------------------------------------*/
-
-      $('#one-img-slide').flexslider({
-        animation: "slide",
-        directionNav: true,
-        touch: true,
-        slideshow: false,
-        prevText: ["<i class='fa fa-angle-left'></i>"],
-        nextText: ["<i class='fa fa-angle-right'></i>"],
-        start: function () {
-          var $container = $('.masonry');
-          $container.imagesLoaded(function () {
-            $container.isotope({
-              itemSelector: '.masonry-item',
-              layoutMode: 'masonry'
-            });
-          });
-        }
-      });
-    }, 100);
-  });
-
-  /* Owl Carousel
-   -------------------------------------------------------*/
-  function initOwlCarousel() {
-    (function ($) {
-      "use strict";
+  // function initPiechart() {
+  //   $('.chart').appear(function () {
+  //
+  //     $('.chart').easyPieChart({
+  //
+  //       animate: {
+  //         duration: 1500,
+  //         enabled: true
+  //       },
+  //       scaleColor: false,
+  //       trackColor: '#f2f2f2',
+  //       lineWidth: 10,
+  //       size: 174,
+  //       lineCap: 'square',
+  //
+  //       onStep: function (from, to, percent) {
+  //         $(this.el).find('.percent').text(Math.round(percent));
+  //       }
+  //     });
+  //     var chart = window.chart = $('.chart').data('easyPieChart');
+  //     $('.js_update').on('click', function () {
+  //       chart.update(Math.random() * 200 - 100);
+  //     });
+  //   });
+  // }
 
 
-
-      // Testimonials
-      $("#owl-testimonials").owlCarousel({
-
-        navigation: false,
-        slideSpeed: 300,
-        pagination: true,
-        paginationSpeed: 400,
-        singleItem: true,
-        autoPlay: 4000,
-        stopOnHover: true
-
-      });
-
-      // Owl Hero Slider
-      $("#owl-slider-one-img").owlCarousel({
-
-        transitionStyle: "fadeUp",
-        autoHeight: true,
-        navigation: true,
-        slideSpeed: 300,
-        singleItem: true,
-        navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
-
-      });
-
-
-    })(jQuery);
-  }
-
+  // angular.element(document).ready(function () {
+  //   setTimeout(function(){
+  //     /* Flexslider / Masonry
+  //      -------------------------------------------------------*/
+  //
+  //     $('#one-img-slide').flexslider({
+  //       animation: "slide",
+  //       directionNav: true,
+  //       touch: true,
+  //       slideshow: false,
+  //       prevText: ["<i class='fa fa-angle-left'></i>"],
+  //       nextText: ["<i class='fa fa-angle-right'></i>"],
+  //       start: function () {
+  //         var $container = $('.masonry');
+  //         $container.imagesLoaded(function () {
+  //           $container.isotope({
+  //             itemSelector: '.masonry-item',
+  //             layoutMode: 'masonry'
+  //           });
+  //         });
+  //       }
+  //     });
+  //   }, 100);
+  // });
 
   // Wow Animations
   var wow = new WOW({

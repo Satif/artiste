@@ -1,0 +1,46 @@
+<!--FEEDBACKS-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span class="collapsed">
+        11 блок (Feedbacks)
+      </span>
+    </h4>
+  </div>
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <div class="jumbotron">
+        <form name="feedbacksForm" ng-submit="vm.addFeedback(vm.newFeedback)" class="mb-20">
+          <div class="form-group">
+            <label for="inp90">Автор</label>
+            <input type="text" class="form-control" ng-model="vm.newFeedback.name" id="inp90">
+          </div>
+          <div class="form-group">
+            <label for="inp91">Відгук</label>
+            <textarea class="form-control" ng-model="vm.newFeedback.description" id="inp91" required></textarea>
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="btn btn-default" ng-disabled="feedbacksForm.$invalid">Зберегти</button>
+          </div>
+        </form>
+      </div>
+
+      <section class="parallax-testimonials relative">
+        <div class="owl-theme text-center">
+
+          <div class="item bg-dark col-xs-6" ng-repeat="feedback in vm.data.feedbacks track by $index">
+            <span class="icon_pencil edit-btn" ng-click="vm.editFeedback(feedback)"></span>
+            <span class="icon_close delete-btn" ng-click="vm.removeFeedback(feedback)"></span>
+
+            <i class="fa fa-quote-left"></i>
+            <p class="testimonial-text ">{{feedback.description}}</p>
+            <h6 class="color-white">{{feedback.name}}</h6>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!--END FEEDBACKS-->

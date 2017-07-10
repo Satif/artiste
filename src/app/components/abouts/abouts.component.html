@@ -1,0 +1,12 @@
+<div class="skills-progress" id="skills">
+
+  <div  ng-repeat="about in aboutsCtrl.aboutsData | orderBy: '-percent' track by $index">
+    <h6>{{about.name}} <span>{{about.percent}}%</span></h6>
+    <div class="progress-solid meter">
+      <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{about.percent}}" class="progress-bar" role="progressbar">
+        <span class="sr-only">{{about.percent}}% Complete</span>
+      </div>
+    </div>
+  </div>
+
+</div>

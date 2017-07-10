@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span class="collapsed">
+        2 блок (Welcome)
+      </span>
+    </h4>
+  </div>
+
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <form ng-submit="vm.save()">
+        <div class="form-group">
+          <label for="inp1">Заголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.welcome.title" id="inp1">
+        </div>
+        <div class="form-group">
+          <label for="inp2">Текст</label>
+          <textarea rows="3" class="form-control" ng-model="vm.data.welcome.text" id="inp2"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inp3">Лого</label>
+          <input type="file" id="inp3" ng-model="vm.data.welcome.logo" >
+          <p class="help-block">Логотип (192x189).</p>
+        </div>
+
+        <button type="submit" class="btn btn-default">Зберегти</button>
+      </form>
+    </div>
+  </div>
+</div>

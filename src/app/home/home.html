@@ -101,83 +101,12 @@
 
     <div class="row heading">
       <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">Meet Our Team</h2>
-        <p class="subheading text-center">Creative Nerds</p>
+        <h2 class="text-center bottom-line">{{homeCtrl.data.teams.title}}</h2>
+        <p class="subheading text-center">{{homeCtrl.data.teams.subtitle}}</p>
       </div>
     </div>
 
-    <div class="row team-row">
-
-      <div class="col-md-4 col-sm-6 team-wrap">
-        <div class="team-member text-center">
-          <div class="team-img">
-            <img src="assets/images/team_1.jpg" alt="">
-            <div class="overlay">
-              <div class="team-details text-center">
-                <p>
-                  Our web design team will spend time with our digital marketing team.
-                </p>
-                <div class="socials mt-20">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h6 class="team-title">John Marshall</h6>
-          <span>Designer</span>
-        </div>
-      </div> <!-- end team member -->
-
-      <div class="col-md-4 col-sm-6 team-wrap">
-        <div class="team-member text-center">
-          <div class="team-img">
-            <img src="assets/images/team_2.jpg" alt="">
-            <div class="overlay">
-              <div class="team-details text-center">
-                <p>
-                  Our web design team will spend time with our digital marketing team.
-                </p>
-                <div class="socials mt-20">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h6 class="team-title">Steve Roberts</h6>
-          <span>Photographer</span>
-        </div>
-      </div> <!-- end team member -->
-
-      <div class="col-md-4 col-sm-6 team-wrap">
-        <div class="team-member last text-center">
-          <div class="team-img">
-            <img src="assets/images/team_3.jpg" alt="">
-            <div class="overlay">
-              <div class="team-details text-center">
-                <p>
-                  Our web design team will spend time with our digital marketing team.
-                </p>
-                <div class="socials mt-20">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h6 class="team-title">Michael Cartney</h6>
-          <span>Designer</span>
-        </div>
-      </div> <!-- end team member -->
-
-    </div>
+    <teams teams-data="homeCtrl.data.teams.teams"></teams>
   </div>
 </section> <!-- end our team -->
 
@@ -189,37 +118,13 @@
 
       <div class="col-sm-6">
         <div class="about-description mt-30">
-          <h4>About Us</h4>
-          <p>Our web design team will spend time with our digital marketing team to ensure the core principles of effective websites and development.</p>
-          <p>We want to tell your brand’s story with quality content that will help you inspire your audience, build meaningful connections and grow your success. Different marketing goals mean different content tools.</p>
+          <h4>{{homeCtrl.data.abouts.title}}</h4>
+          <p>{{homeCtrl.data.abouts.description}}</p>
         </div>
       </div> <!-- end col -->
 
       <div class="col-sm-6">
-        <div class="skills-progress" id="skills">
-
-          <h6>Design <span>100%</span></h6>
-          <div class="progress-solid meter">
-            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="progress-bar" role="progressbar">
-              <span class="sr-only">100% Complete</span>
-            </div>
-          </div>
-
-          <h6>Marketing <span>70%</span></h6>
-          <div class="progress-solid meter">
-            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar" role="progressbar">
-              <span class="sr-only">70% Complete</span>
-            </div>
-          </div>
-
-          <h6>Development <span>90%</span></h6>
-          <div class="progress-solid meter" id="animated-skills">
-            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar" role="progressbar">
-              <span class="sr-only">90% Complete</span>
-            </div>
-          </div>
-
-        </div>
+        <abouts abouts-data="homeCtrl.data.abouts.abouts"></abouts>
       </div> <!-- end col -->
 
     </div>
@@ -233,136 +138,12 @@
 
     <div class="row heading">
       <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">From Blog</h2>
-        <p class="subheading text-center">Our Latest News</p>
+        <h2 class="text-center bottom-line">{{homeCtrl.data.blogs.title}}</h2>
+        <p class="subheading text-center">{{homeCtrl.data.blogs.subtitle}}</p>
       </div>
     </div>
 
-    <div class="container">
-
-      <div class="row">
-
-        <div id="owl-blog" class="owl-carousel owl-theme">
-
-          <div class="blog-col">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="assets/images/blog_1.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry-box">
-              <div class="entry-title">
-                <h4><a href="blog-single.html">All Process Food Lab Studio</a></h4>
-              </div>
-              <ul class="entry-meta">
-                <li>by <a href="blog-single">John Marshal</a></li>
-                <li>
-                  <a href="#">July 10, 2015</a>
-                </li>
-              </ul>
-              <div class="entry-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                <a href="blog-single.html" class="read-more">Read More</a>
-              </div>
-            </div>
-          </div> <!-- end post -->
-
-          <div class="blog-col">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="assets/images/blog_2.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry-box">
-              <div class="entry-title">
-                <h4><a href="blog-single.html">Amazing magazines</a></h4>
-              </div>
-              <ul class="entry-meta">
-                <li>by <a href="blog-single">John Marshal</a></li>
-                <li>
-                  <a href="#">July 10, 2015</a>
-                </li>
-              </ul>
-              <div class="entry-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                <a href="blog-single.html" class="read-more">Read More</a>
-              </div>
-            </div>
-          </div> <!-- end post -->
-
-          <div class="blog-col">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="assets/images/blog_3.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry-box">
-              <div class="entry-title">
-                <h4><a href="blog-single.html">All Process Food Lab Studio</a></h4>
-              </div>
-              <ul class="entry-meta">
-                <li>by <a href="blog-single">John Marshal</a></li>
-                <li>
-                  <a href="#">July 10, 2015</a>
-                </li>
-              </ul>
-              <div class="entry-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                <a href="blog-single.html" class="read-more">Read More</a>
-              </div>
-            </div>
-          </div> <!-- end post -->
-
-          <div class="blog-col last">
-            <div class="entry-slider oh">
-              <div class="flexslider" id="one-img-slide">
-                <ul class="slides">
-                  <li>
-                    <a href="#">
-                      <img src="assets/images/blog_gallery_1.jpg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/images/blog_gallery_2.jpg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/images/blog_gallery_3.jpg" alt="">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div> <!-- end flexslider -->
-
-            <div class="entry-box">
-              <div class="entry-title">
-                <h4><a href="blog-single.html">All Process Food Lab Studio</a></h4>
-              </div>
-              <ul class="entry-meta">
-                <li>by <a href="blog-single">John Marshal</a></li>
-                <li>
-                  <a href="#">July 10, 2015</a>
-                </li>
-              </ul>
-              <div class="entry-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                <a href="blog-single.html" class="read-more">Read More</a>
-              </div>
-            </div>
-
-          </div> <!-- end post -->
-
-        </div>
-
-        <div class="customNavigation mt-40 text-center">
-          <a class="prev"><i class="icon arrow_left"></i></a>
-          <a class="next"><i class="icon arrow_right"></i></a>
-        </div>
-
-      </div> <!-- end row -->
-    </div>
+    <blogs blogs-data="homeCtrl.data.blogs.blogs"></blogs>
   </div>
 </section> <!-- end from blog -->
 
@@ -370,85 +151,22 @@
 <!-- Testimonials -->
 <section class="section-wrap parallax-testimonials relative" style="background-image: url(assets/images/testimonials_bg.jpg)">
 
-  <div id="owl-testimonials" class="owl-carousel owl-theme text-center">
-
-    <div class="item">
-      <div class="container testimonial">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <i class="fa fa-quote-left"></i>
-            <p class="testimonial-text">I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat, every detail has been taken care these team are realy amazing and talented! I will work only with enigma agency.</p>
-            <h6>John C. Marshall</h6>
-            <span>Art Director</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="container testimonial">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <i class="fa fa-quote-left"></i>
-            <p class="testimonial-text">I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat, every detail has been taken care these team are realy amazing and talented! I will work only with enigma agency.</p>
-            <h6>John C. Marshall</h6>
-            <span>Art Director</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="container testimonial">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <i class="fa fa-quote-left"></i>
-            <p class="testimonial-text">I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat, every detail has been taken care these team are realy amazing and talented! I will work only with enigma agency.</p>
-            <h6>John C. Marshall</h6>
-            <span>Art Director</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <feedbacks feedbacks-data="homeCtrl.data.feedbacks"></feedbacks>
 </section> <!-- end testimonials -->
 
 
-<!-- Clients -->
+<!-- Feedbacks -->
 <section class="section-wrap clients bg-light">
   <div class="container">
 
     <div class="row heading">
       <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">Our Clients</h2>
-        <p class="subheading text-center">They Trust Us</p>
+        <h2 class="text-center bottom-line">{{homeCtrl.data.clients.title}}</h2>
+        <p class="subheading text-center">{{homeCtrl.data.clients.subtitle}}</p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_1.png" alt="">
-      </div>
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_2.png" alt="">
-      </div>
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_3.png" alt="">
-      </div>
-    </div>
-    <div class="row second-row">
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_4.png" alt="">
-      </div>
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_5.png" alt="">
-      </div>
-      <div class="col-sm-4 client-logo">
-        <img src="assets/images/client_logo_6.png" alt="">
-      </div>
-    </div>
-
+    <clients clients-data="homeCtrl.data.clients.clients"></clients>
   </div>
 </section> <!-- end clients -->
 

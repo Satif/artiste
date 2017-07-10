@@ -23,6 +23,20 @@
     var processesStorage = Backendless.Data.of('Processes');
     var processStorage = Backendless.Data.of('Process');
 
+    var teamsStorage = Backendless.Data.of('Teams');
+    var teamStorage = Backendless.Data.of('Team');
+
+    var aboutsStorage = Backendless.Data.of('Abouts');
+    var aboutStorage = Backendless.Data.of('About');
+
+    var blogsStorage = Backendless.Data.of('Blogs');
+    var blogStorage = Backendless.Data.of('Blog');
+
+    var feedbacksStorage = Backendless.Data.of('Feedbacks');
+
+    var clientsStorage = Backendless.Data.of('Clients');
+    var clientStorage = Backendless.Data.of('Client');
+
     return {
       getAllData: getAllData,
       save: save,
@@ -35,7 +49,17 @@
       saveWork: saveWork,
       removeWork: removeWork,
       saveProcess: saveProcess,
-      removeProcess: removeProcess
+      removeProcess: removeProcess,
+      saveTeam: saveTeam,
+      removeTeam: removeTeam,
+      saveAbout: saveAbout,
+      removeAbout: removeAbout,
+      saveBlog: saveBlog,
+      removeBlog: removeBlog,
+      saveFeedback: saveFeedback,
+      removeFeedback: removeFeedback,
+      saveClient: saveClient,
+      removeClient: removeClient
     };
 
     function getAllData() {
@@ -210,6 +234,161 @@
       var deferred = $q.defer();
 
       processStorage.remove(id)
+        .then(function (savedObject) {
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    // TEAM
+    function saveTeam(objectId, data) {
+      var deferred = $q.defer();
+
+      teamStorage.save(data)
+        .then(function (savedObject) {
+          teamsStorage.addRelation(objectId, 'teams', [savedObject]);
+
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeTeam(id) {
+      var deferred = $q.defer();
+
+      teamStorage.remove(id)
+        .then(function (savedObject) {
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    // ABOUT
+    function saveAbout(objectId, data) {
+      var deferred = $q.defer();
+
+      aboutStorage.save(data)
+        .then(function (savedObject) {
+          aboutsStorage.addRelation(objectId, 'abouts', [savedObject]);
+
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeAbout(id) {
+      var deferred = $q.defer();
+
+      aboutStorage.remove(id)
+        .then(function (savedObject) {
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    // BLOG
+    function saveBlog(objectId, data) {
+      var deferred = $q.defer();
+
+      blogStorage.save(data)
+        .then(function (savedObject) {
+          blogsStorage.addRelation(objectId, 'blogs', [savedObject]);
+
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeBlog(id) {
+      var deferred = $q.defer();
+
+      blogStorage.remove(id)
+        .then(function (savedObject) {
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    // FEEDBACKS
+    function saveFeedback(objectId, data) {
+      var deferred = $q.defer();
+
+      feedbacksStorage.save(data)
+        .then(function (savedObject) {
+          dataStorage.addRelation(objectId, 'feedbacks', [savedObject]);
+
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeFeedback(id) {
+      var deferred = $q.defer();
+
+      feedbacksStorage.remove(id)
+        .then(function (savedObject) {
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    // CLIENTS
+    function saveClient(objectId, data) {
+      var deferred = $q.defer();
+
+      clientStorage.save(data)
+        .then(function (savedObject) {
+          clientsStorage.addRelation(objectId, 'clients', [savedObject]);
+
+          deferred.resolve(savedObject);
+        })
+        .catch(function (error) {
+          deferred.reject(error);
+        });
+
+      return deferred.promise;
+    }
+
+    function removeClient(id) {
+      var deferred = $q.defer();
+
+      clientStorage.remove(id)
         .then(function (savedObject) {
           deferred.resolve(savedObject);
         })

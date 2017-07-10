@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span role="button">
+        1 блок (Slider)
+      </span>
+    </h4>
+  </div>
+
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <form ng-submit="vm.save()">
+        <div class="form-group">
+          <label for="text1">Заголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.slider.title" id="text1">
+        </div>
+        <div class="form-group">
+          <label for="text2">Підзаголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.slider.subtitle" id="text2">
+        </div>
+        <div class="form-group">
+          <label for="text3">Текст кнопки</label>
+          <input type="text" class="form-control" ng-model="vm.data.slider.btnText" id="text3">
+        </div>
+        <div class="form-group">
+          <label for="text4">Відео ID (Vimeo video id)</label>
+          <input type="text" class="form-control" ng-model="vm.data.slider.videoId" id="text4">
+        </div>
+
+        <button type="submit" class="btn btn-default">Зберегти</button>
+      </form>
+    </div>
+  </div>
+</div>

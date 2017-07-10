@@ -241,5 +241,198 @@
       vm.newProcess = {};
     }
 
+
+    // PROCESSES
+    vm.addTeam = addTeam;
+    vm.editTeam = editTeam;
+    vm.removeTeam = removeTeam;
+
+    function addTeam(item) {
+      var objectId = Data.teams.objectId;
+
+      HomeService
+        .saveTeam(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.teams.teams.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearTeamForm();
+        });
+    }
+
+    function editTeam(item) {
+      vm.newTeam = item;
+    }
+
+    function removeTeam(item) {
+      HomeService
+        .removeTeam(item.objectId)
+        .then(function () {
+          var index = vm.data.teams.teams.indexOf(item);
+          vm.data.teams.teams.splice(index, 1);
+        });
+    }
+
+    function clearTeamForm() {
+      vm.newTeam = {};
+    }
+
+
+    // ABOUTS
+    vm.addAbout = addAbout;
+    vm.editAbout = editAbout;
+    vm.removeAbout = removeAbout;
+
+    function addAbout(item) {
+      var objectId = Data.abouts.objectId;
+
+      HomeService
+        .saveAbout(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.abouts.abouts.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearAboutForm();
+        });
+    }
+
+    function editAbout(item) {
+      vm.newAbout = item;
+    }
+
+    function removeAbout(item) {
+      HomeService
+        .removeAbout(item.objectId)
+        .then(function () {
+          var index = vm.data.abouts.abouts.indexOf(item);
+          vm.data.abouts.abouts.splice(index, 1);
+        });
+    }
+
+    function clearAboutForm() {
+      vm.newAbout = {};
+    }
+
+
+    // BLOGS
+    vm.addBlog = addBlog;
+    vm.editBlog = editBlog;
+    vm.removeBlog = removeBlog;
+
+    function addBlog(item) {
+      var objectId = Data.blogs.objectId;
+
+      HomeService
+        .saveBlog(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.blogs.blogs.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearBlogForm();
+        });
+    }
+
+    function editBlog(item) {
+      vm.newBlog = item;
+    }
+
+    function removeBlog(item) {
+      HomeService
+        .removeBlog(item.objectId)
+        .then(function () {
+          var index = vm.data.blogs.blogs.indexOf(item);
+          vm.data.blogs.blogs.splice(index, 1);
+        });
+    }
+
+    function clearBlogForm() {
+      vm.newBlog = {};
+    }
+
+
+    // FEEDBACKS
+    vm.addFeedback = addFeedback;
+    vm.editFeedback = editFeedback;
+    vm.removeFeedback = removeFeedback;
+
+    function addFeedback(item) {
+      HomeService
+        .saveFeedback(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.feedbacks.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearFeedbackForm();
+        });
+    }
+
+    function editFeedback(item) {
+      vm.newFeedback = item;
+    }
+
+    function removeFeedback(item) {
+      HomeService
+        .removeFeedback(item.objectId)
+        .then(function () {
+          var index = vm.data.feedbacks.indexOf(item);
+          vm.data.feedbacks.splice(index, 1);
+        });
+    }
+
+    function clearFeedbackForm() {
+      vm.newFeedback = {};
+    }
+
+
+    // CLIENTS
+    vm.addClient = addClient;
+    vm.editClient = editClient;
+    vm.removeClient = removeClient;
+
+    function addClient(item) {
+      var objectId = Data.clients.objectId;
+
+      HomeService
+        .saveClient(objectId, item)
+        .then(function (resp) {
+          if (!item.objectId) {
+            vm.data.clients.clients.push(resp);
+          } else {
+            item.objectId = resp.objectId;
+          }
+
+          clearClientForm();
+        });
+    }
+
+    function editClient(item) {
+      vm.newClient = item;
+    }
+
+    function removeClient(item) {
+      HomeService
+        .removeClient(item.objectId)
+        .then(function () {
+          var index = vm.data.clients.clients.indexOf(item);
+          vm.data.clients.clients.splice(index, 1);
+        });
+    }
+
+    function clearClientForm() {
+      vm.newClient = {};
+    }
+
   }
 })();

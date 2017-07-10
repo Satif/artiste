@@ -1,0 +1,95 @@
+<!--TEAMS-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span class="collapsed">
+        8 блок (Teams)
+      </span>
+    </h4>
+  </div>
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <form name="teamsForm" ng-submit="vm.save()" class="mb-20">
+        <div class="form-group">
+          <label for="inp60">Заголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.teams.title" id="inp60">
+        </div>
+        <div class="form-group">
+          <label for="inp61">Підзаголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.teams.subtitle" id="inp61">
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn-default">Зберегти</button>
+        </div>
+      </form>
+
+      <div class="jumbotron">
+        <form name="teamForm" ng-submit="vm.addTeam(vm.newTeam)" class="mb-20">
+          <div class="form-group">
+            <label for="inp62">Ім'я та прізвище</label>
+            <input type="text" class="form-control" ng-model="vm.newTeam.name" id="inp62" required>
+          </div>
+          <div class="form-group">
+            <label for="inp63">Посада</label>
+            <input type="text" class="form-control" ng-model="vm.newTeam.position" id="inp63" required>
+          </div>
+          <div class="form-group">
+            <label for="inp68">Опис</label>
+            <input type="text" class="form-control" ng-model="vm.newTeam.description" id="inp68" required>
+          </div>
+          <div class="form-group">
+            <label for="inp64">Facebook</label>
+            <input type="text" class="form-control" ng-model="vm.newTeam.facebook" id="inp64" required>
+          </div>
+          <div class="form-group">
+            <label for="inp65">Email</label>
+            <input type="text" class="form-control" ng-model="vm.newTeam.email" id="inp65" required>
+          </div>
+          <div class="form-group">
+            <label for="inp67">Фото</label>
+            <input type="file" id="inp67" ng-model="vm.newTeam.photo" name="file">
+            <div class="help-block">Фото (370x450).</div>
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="btn btn-default" ng-disabled="teamForm.$invalid">Зберегти</button>
+          </div>
+        </form>
+      </div>
+
+      <section class="pb-0 our-team" id="about-us">
+        <div class="container">
+          <div class="row team-row">
+
+            <div class="col-md-4 col-sm-6 team-wrap" ng-repeat="team in vm.data.teams.teams track by $index">
+              <div class="team-member text-center">
+                <span class="icon_pencil edit-btn" ng-click="vm.editTeam(team)"></span>
+                <span class="icon_close delete-btn" ng-click="vm.removeTeam(team)"></span>
+
+                <div class="team-img">
+                  <img src="assets/images/team_1.jpg" alt="">
+                  <div class="overlay">
+                    <div class="team-details text-center">
+                      <p>
+                        {{team.description}}
+                      </p>
+                      <div class="socials mt-20">
+                        <a href="{{team.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="mailto:{{team.email}}"><i class="fa fa-envelope"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h6 class="team-title">{{team.name}}</h6>
+                <span>{{team.position}}</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+<!--END TEAMS-->

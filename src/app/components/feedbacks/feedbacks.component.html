@@ -1,0 +1,15 @@
+<div id="owl-testimonials" class="owl-carousel owl-theme text-center">
+
+  <div class="item" ng-repeat="feedback in feedbacksCtrl.feedbacksData">
+    <div class="container testimonial">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <i class="fa fa-quote-left"></i>
+          <p class="testimonial-text">{{feedback.description}}</p>
+          <h6>{{feedback.name}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
