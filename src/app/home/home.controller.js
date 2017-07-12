@@ -8,10 +8,9 @@
 
   /** @ngInject */
   function HomeController(Data) {
-    console.log(Data)
     var self = this;
     
-    self.data = Data;
+    self.data = Data[0];
   }
 
 })();

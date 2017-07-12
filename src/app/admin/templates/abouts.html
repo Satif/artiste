@@ -24,7 +24,7 @@
       </form>
 
       <div class="jumbotron">
-        <form name="aboutForm" ng-submit="vm.addAbout(vm.newAbout)" class="mb-20">
+        <form name="aboutForm" ng-submit="vm.addItem(vm.newAbout, 'abouts', 'newAbout')" class="mb-20">
           <div class="form-group">
             <label for="inp72">Назва</label>
             <input type="text" class="form-control" ng-model="vm.newAbout.name" id="inp72" required>
@@ -35,19 +35,20 @@
           </div>
 
           <div class="text-right">
-            <button type="submit" class="btn btn-default" ng-disabled="aboutForm.$invalid">Зберегти</button>
+            <button type="button" class="btn btn-default" ng-click="vm.clearForm('newAbout')">Відміна</button>
+            <button type="submit" class="btn btn-default" ng-disabled="aboutForm.$invalid">Додати</button>
           </div>
         </form>
       </div>
 
       <section class="pt-10">
-        <div class="container">
-          <div class="row">
+        <div class="container" style="max-width: 100%;">
+          <div class="row" >
 
-            <div class="col-xs-6" ng-repeat="about in vm.data.abouts.abouts track by $index">
+            <div class="col-xs-7" ng-repeat="about in vm.data.abouts.abouts track by $index" >
               <div class="skills-progress" id="skills">
-                <span class="icon_pencil edit-btn" ng-click="vm.editAbout(about)"></span>
-                <span class="icon_close delete-btn" ng-click="vm.removeAbout(about)"></span>
+                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newAbout', about)"></span>
+                <span class="icon_close delete-btn" ng-click="vm.removeItem(about, 'abouts')"></span>
 
                 <h6>{{about.name}} <span>{{about.percent}}%</span></h6>
                 <div class="progress-solid meter">

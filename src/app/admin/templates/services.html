@@ -24,7 +24,7 @@
       </form>
 
       <div class="jumbotron">
-        <form name="serviceForm" ng-submit="vm.addService(vm.newService)" style="margin-bottom: 15px;">
+        <form name="serviceForm" ng-submit="vm.addItem(vm.newService, 'services', 'newService')" class="mb-20">
           <div class="form-group">
             <label for="inp7">Заголовок</label>
             <input type="text" class="form-control" ng-model="vm.newService.title" id="inp7" required>
@@ -42,7 +42,8 @@
           </div>
 
           <div class="text-right">
-            <button type="submit" class="btn btn-default" ng-disabled="serviceForm.$invalid">Зберегти</button>
+            <button type="button" class="btn btn-default" ng-click="vm.clearForm('newService')">Відміна</button>
+            <button type="submit" class="btn btn-default" ng-disabled="serviceForm.$invalid">Додати</button>
           </div>
         </form>
       </div>
@@ -51,8 +52,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4 service-item" ng-repeat="service in vm.data.services.services track by $index">
-              <span class="icon_pencil edit-btn" ng-click="vm.editService(service)"></span>
-              <span class="icon_close delete-btn" ng-click="vm.removeService(service)"></span>
+              <span class="icon_pencil edit-btn" ng-click="vm.editItem('newService', service)"></span>
+              <span class="icon_close delete-btn" ng-click="vm.removeItem(service, 'services')"></span>
 
               <div class="service-item-box icon-effect-1 icon-effect-1a text-center">
                 <a href="#">

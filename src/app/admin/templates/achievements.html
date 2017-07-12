@@ -9,7 +9,7 @@
   </div>
   <div class="panel-collapse collapsed">
     <div class="panel-body">
-      <form name="achievementForm" ng-submit="vm.addAchievement(vm.newAchievement)" class="mb-20">
+      <form name="achievementForm" ng-submit="vm.addItem(vm.newAchievement, 'achievements', 'newAchievement')" class="mb-20">
         <div class="form-group">
           <label for="inp4">Цифра</label>
           <input type="number" class="form-control" ng-model="vm.newAchievement.number" id="inp4" required>
@@ -27,16 +27,17 @@
         </div>
 
         <div class="text-right">
-          <button type="submit" class="btn btn-default" ng-disabled="achievementForm.$invalid">Зберегти</button>
+          <button type="button" class="btn btn-default" ng-click="vm.clearForm('newAchievement')">Відміна</button>
+          <button type="submit" class="btn btn-default" ng-disabled="achievementForm.$invalid">Додати</button>
         </div>
       </form>
 
       <section class="result-boxes">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-4 nopadding" ng-repeat="achievement in vm.data.achievements track by $index">
-              <span class="icon_pencil edit-btn" ng-click="vm.editAchievement(achievement)"></span>
-              <span class="icon_close delete-btn" ng-click="vm.removeAchievement(achievement)"></span>
+            <div class="col-md-4 nopadding" ng-repeat="achievement in vm.data.achievements.achievements track by $index">
+              <span class="icon_pencil edit-btn" ng-click="vm.editItem('newAchievement', achievement)"></span>
+              <span class="icon_close delete-btn" ng-click="vm.removeItem(achievement, 'achievements')"></span>
 
               <div class="statistic result-box result-box-first">
                 <div class="result-wrap clearfix">

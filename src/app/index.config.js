@@ -12,6 +12,20 @@
 
     Backendless.initApp(APP_ID, API_KEY);
 
+    // var client = new stitch.StitchClient('artside-ovyoz');
+    // var db = client.service('mongodb', 'mongodb-atlas').db('artside');
+    //
+    // client.login().then(function() {
+    //   db.collection('data').updateOne({owner_id: client.authedId()}, {$set:{number:42}}, {upsert:true});
+    // }).then(function() {
+    //   db.collection('data').find({owner_id: client.authedId()});
+    // }).then(function(docs) {
+    //   console.log("Found docs", docs);
+    //   console.log("[MongoDB Stitch] Connected to Stitch");
+    // }).catch(function(err) {
+    //     console.error(err)
+    // });
+
     // $resourceProvider.defaults.stripTrailingSlashes = false;
 
     // use the HTML5 History API

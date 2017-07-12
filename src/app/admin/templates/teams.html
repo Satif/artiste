@@ -24,7 +24,7 @@
       </form>
 
       <div class="jumbotron">
-        <form name="teamForm" ng-submit="vm.addTeam(vm.newTeam)" class="mb-20">
+        <form name="teamForm" ng-submit="vm.addItem(vm.newTeam, 'teams', 'newTeam')" class="mb-20">
           <div class="form-group">
             <label for="inp62">Ім'я та прізвище</label>
             <input type="text" class="form-control" ng-model="vm.newTeam.name" id="inp62" required>
@@ -52,7 +52,8 @@
           </div>
 
           <div class="text-right">
-            <button type="submit" class="btn btn-default" ng-disabled="teamForm.$invalid">Зберегти</button>
+            <button type="button" class="btn btn-default" ng-click="vm.clearForm('newTeam')">Відміна</button>
+            <button type="submit" class="btn btn-default" ng-disabled="teamForm.$invalid">Додати</button>
           </div>
         </form>
       </div>
@@ -63,8 +64,8 @@
 
             <div class="col-md-4 col-sm-6 team-wrap" ng-repeat="team in vm.data.teams.teams track by $index">
               <div class="team-member text-center">
-                <span class="icon_pencil edit-btn" ng-click="vm.editTeam(team)"></span>
-                <span class="icon_close delete-btn" ng-click="vm.removeTeam(team)"></span>
+                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newTeam', team)"></span>
+                <span class="icon_close delete-btn" ng-click="vm.removeItem(team, 'teams')"></span>
 
                 <div class="team-img">
                   <img src="assets/images/team_1.jpg" alt="">

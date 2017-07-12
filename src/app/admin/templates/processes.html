@@ -24,7 +24,7 @@
       </form>
 
       <div class="jumbotron">
-        <form name="processForm" ng-submit="vm.addProcess(vm.newProcess)" class="mb-20">
+        <form name="processForm" ng-submit="vm.addItem(vm.newProcess, 'processes', 'newProcess')" class="mb-20">
           <div class="form-group">
             <label for="inp52">Назва</label>
             <input type="text" class="form-control" ng-model="vm.newProcess.name" id="inp52" required>
@@ -38,7 +38,8 @@
           </div>
 
           <div class="text-right">
-            <button type="submit" class="btn btn-default" ng-disabled="processForm.$invalid">Зберегти</button>
+            <button type="button" class="btn btn-default" ng-click="vm.clearForm('newProcess')">Відміна</button>
+            <button type="submit" class="btn btn-default" ng-disabled="processForm.$invalid">Додати</button>
           </div>
         </form>
       </div>
@@ -48,8 +49,8 @@
 
           <div class="col-sm-5ths" ng-repeat="process in vm.data.processes.processes track by $index">
             <div class="process-item">
-              <span class="icon_pencil edit-btn" ng-click="vm.editProcess(process)"></span>
-              <span class="icon_close delete-btn" ng-click="vm.removeProcess(process)"></span>
+              <span class="icon_pencil edit-btn" ng-click="vm.editItem('newProcess', process)"></span>
+              <span class="icon_close delete-btn" ng-click="vm.removeItem(process, 'processes')"></span>
 
               <div class="process-wrap text-center">
                 <i class="icon icon-{{process.icon}}"></i>
