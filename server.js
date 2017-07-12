@@ -4,26 +4,13 @@
 var express  = require('express');
 var app      = express();                        // create our app w/ express
 var mongoose = require('mongoose');              // mongoose for mongodb
-var cors = require('cors')
-
-// var MongoClient = require('mongodb').MongoClient;
-
+var cors = require('cors');
 
 var morgan   = require('morgan');                // log requests to the console (express4)
 var bodyParser = require('body-parser');         // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var conf = require('./gulp/conf');
 var port = process.env.PORT || 8888;         // set the port
-
-
-// configuration ===============================================================
-// MongoClient.connect(conf.url.database, function(err, database) {
-//   if (err) {
-//     console.log('Error connecting to DB: '+ err.message);
-//   } else {
-//     console.log('Connected to database.');
-//   }
-// })
 
 var mongoOption = {
   useMongoClient: true
@@ -37,7 +24,7 @@ mongoose.connect(conf.url.database, mongoOption, function(err, res) {
   }
 });
 
-app.use(cors())
+app.use(cors());
 app.use(express.static(__dirname + '/dist'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
@@ -46,10 +33,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 
-
 // routes ======================================================================
 require('./server/routes.js')(app);
-
 
 // listen (start app with node server.js) ======================================
 app.listen(port);
