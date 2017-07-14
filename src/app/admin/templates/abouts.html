@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <span class="collapsed">
-        9 блок (Abouts)
+        Abouts
       </span>
     </h4>
   </div>
@@ -47,8 +47,12 @@
 
             <div class="col-xs-7" ng-repeat="about in vm.data.abouts.abouts track by $index" >
               <div class="skills-progress" id="skills">
-                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newAbout', about)"></span>
-                <span class="icon_close delete-btn" ng-click="vm.removeItem(about, 'abouts')"></span>
+                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newAbout', about)">
+                  <i class="fa fa-pencil"></i>
+                </span>
+                <span class="icon_close delete-btn" ng-click="vm.removeItem(about, 'abouts')">
+                   <i class="fa fa-close"></i>
+                </span>
 
                 <h6>{{about.name}} <span>{{about.percent}}%</span></h6>
                 <div class="progress-solid meter">

@@ -67,7 +67,18 @@
         $('html, body').animate({scrollTop: 0}, 'slow');
         return false;
       });
-    }, 0)
+
+      initOnepagenav();
+
+      function initOnepagenav() {
+        $('.navigation-overlay .navbar-collapse ul li a, .nav-type-4 .navbar-collapse ul li a').on('click', function () {
+          $('.navbar-toggle:visible').click();
+        });
+
+        // Smooth Scroll Navigation
+        $('.local-scroll-no-offset').localScroll({offset: {top: 0}, duration: 1500, easing: 'easeInOutExpo'});
+      }
+    }, 0);
   }
 
 })();

@@ -1,22 +1,80 @@
-<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
-	<button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
-	<a class="navbar-brand text-uppercase" href ui-sref="app.home">Rin</a>
-	<div id="navbar">
-		<nav class="nav navbar-nav pull-right">
-			<div class="btn-group">
-				<a class="text-uppercase" data-toggle="dropdown">
-					Luke Skywalker
-					<img class="avatar menu-img" src="https://pbs.twimg.com/profile_images/726100805/4394612844_0b36f6a9db_o.jpg">
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" ui-sref="app.login" href>Logout</a>
-				</div>
-			</div>
-		</nav>
-	</div>
-</nav>
+<!-- Navigation -->
+<header class="nav-type-1" id="home">
+	<nav class="navbar navbar-fixed-top">
+		<div class="navigation-overlay">
+			<div class="container-fluid relative">
+				<div class="row">
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Logo -->
+						<div class="logo-container">
+							<div class="logo-wrap local-scroll">
+								<a href="#home">
+									<img class="logo" src="assets/images/logo_light.png" alt="logo">
+								</a>
+							</div>
+						</div>
+					</div> <!-- end navbar-header -->
+
+
+					<div class="col-md-8 col-xs-12 nav-wrap">
+						<div class="collapse navbar-collapse text-center" id="navbar-collapse">
+
+							<ul class="nav navbar-nav local-scroll text-center">
+
+								<li class="active">
+									<a href="#home">Home</a>
+								</li>
+								<li>
+									<a href="#portfolio">Works</a>
+								</li>
+								<li>
+									<a href="#about-us">About</a>
+								</li>
+								<li>
+									<a href="#contact">Contact</a>
+								</li>
+
+
+                <li ng-if="vm.isLogined">
+                  <a ui-sref="app.admin">Admin</a>
+                </li>
+                <li ng-if="vm.isLogined">
+                  <a href="#" ng-click="vm.logout()">Logout</a>
+                </li>
+
+							</ul>
+						</div>
+					</div> <!-- end col -->
+
+					<div class="menu-socials hidden-sm hidden-xs">
+						<ul>
+							<li>
+								<a ng-if="vm.data.contacts.facebook" href="{{vm.data.contacts.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a ng-if="vm.data.contacts.twitter" href="{{vm.data.contacts.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a ng-if="vm.data.contacts.vimeo" href="{{vm.data.contacts.vimeo}}" target="_blank"><i class="fa fa-vimeo"></i></a>
+							</li>
+							<li>
+								<a ng-if="vm.data.contacts.vk" href="{{vm.data.contacts.vk}}" target="_blank"><i class="fa fa-vk"></i></a>
+							</li>
+						</ul>
+					</div>
+
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+		</div> <!-- end navigation -->
+	</nav> <!-- end navbar -->
+
+</header>
+<!-- end navigation -->

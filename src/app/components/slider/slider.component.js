@@ -61,6 +61,8 @@
         stopLoop: "off",
         stopAfterLoops: 0
       });
+
+      $('.local-scroll').localScroll({offset: {top: -60}, duration: 1500, easing: 'easeInOutExpo'});
     }, 0);
   }
 })();

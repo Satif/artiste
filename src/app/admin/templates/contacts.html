@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span role="button">
+        Contacts
+      </span>
+    </h4>
+  </div>
+
+  <div class="panel-collapse collapsed">
+    <div class="panel-body">
+      <form ng-submit="vm.save()">
+        <div class="form-group">
+          <label for="inp90">Заголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.title" id="inp90">
+        </div>
+        <div class="form-group">
+          <label for="inp91">Підзаголовок</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.subtitle" id="inp91">
+        </div>
+        <div class="form-group">
+          <label for="inp92">Текст над часом</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.timeText" id="inp92">
+        </div>
+        <div class="form-group">
+          <label for="inp93">Години роботи</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.time" id="inp93">
+        </div>
+        <div class="form-group">
+          <label for="inp94">Адреса</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.address" id="inp94">
+        </div>
+        <div class="form-group">
+          <label for="inp95">Телефон</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.phone" id="inp95">
+        </div>
+        <div class="form-group">
+          <label for="inp96">Email</label>
+          <input type="email" class="form-control" ng-model="vm.data.contacts.email" id="inp96">
+        </div>
+        <div class="form-group">
+          <label for="inp97">Facebook</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.facebook" id="inp97">
+        </div>
+        <div class="form-group">
+          <label for="inp98">Twitter</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.twitter" id="inp98">
+        </div>
+        <div class="form-group">
+          <label for="inp99">Vimeo</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.vimeo" id="inp99">
+        </div>
+        <div class="form-group">
+          <label for="inp100">Vk</label>
+          <input type="text" class="form-control" ng-model="vm.data.contacts.vk" id="inp100">
+        </div>
+
+        <button type="submit" class="btn btn-default">Зберегти</button>
+      </form>
+    </div>
+  </div>
+</div>

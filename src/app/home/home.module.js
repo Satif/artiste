@@ -10,7 +10,7 @@
   function config($stateProvider) {
 
     $stateProvider.state('app.home', {
-      url: '/home',
+      url: '/',
       views: {
         'content@app': {
           templateUrl: 'app/home/home.html',

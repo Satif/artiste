@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <span class="collapsed">
-        8 блок (Teams)
+        Teams
       </span>
     </h4>
   </div>
@@ -64,8 +64,12 @@
 
             <div class="col-md-4 col-sm-6 team-wrap" ng-repeat="team in vm.data.teams.teams track by $index">
               <div class="team-member text-center">
-                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newTeam', team)"></span>
-                <span class="icon_close delete-btn" ng-click="vm.removeItem(team, 'teams')"></span>
+                <span class="icon_pencil edit-btn" ng-click="vm.editItem('newTeam', team)">
+                  <i class="fa fa-pencil"></i>
+                </span>
+                <span class="icon_close delete-btn" ng-click="vm.removeItem(team, 'teams')">
+                   <i class="fa fa-close"></i>
+                </span>
 
                 <div class="team-img">
                   <img src="assets/images/team_1.jpg" alt="">

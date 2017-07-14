@@ -12,40 +12,8 @@
 <!-- END WELCOME -->
 
 
-<!-- ACHIEVEMENTS -->
-<section class="result-boxes">
-  <achievements list-data="homeCtrl.data.achievements.achievements"></achievements>
-</section>
-<!-- END ACHIEVEMENTS -->
-
-
-<!-- Our Services -->
-<section class="section-wrap bg-light pb-mdm-50 pb-130" id="services">
-  <div class="container">
-
-    <div class="row heading">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">{{homeCtrl.data.services.title}}</h2>
-        <p class="subheading text-center">{{homeCtrl.data.services.subtitle}}</p>
-      </div>
-    </div>
-
-    <services services-data="homeCtrl.data.services.services"></services>
-  </div>
-</section>
-<!-- end services -->
-
-
-<!-- Orders Section -->
-<section class="section-wrap promo-section bg-dark">
-  <orders orders-data="homeCtrl.data.orders.orders"></orders>
-</section>
-<!-- end orders section -->
-
-
-
-<!-- Portfolio -->
-<section class="section-wrap works-grid-3-col-wide pb-0" id="portfolio">
+<!-- WORKS -->
+<section class="section-wrap works-grid-3-col-wide bg-light" id="portfolio">
 
   <div class="container-fluid">
 
@@ -58,20 +26,21 @@
 
     <works works-data="homeCtrl.data.works.works"></works>
   </div>
-</section> <!-- end portfolio-->
+</section>
+<!-- END WORKS -->
 
 
 <!-- Call to Action -->
-<section class="call-to-action">
+<section class="call-to-action bg-dark">
   <div class="container">
     <div class="row">
 
       <div class="col-md-9 col-xs-12">
-        <h2>{{homeCtrl.data.works.btnDescription}}</h2>
+        <h2 style="color: #fff;">{{homeCtrl.data.works.btnDescription}}</h2>
       </div>
 
       <div class="col-md-3 col-xs-12 cta-button">
-        <a href="#" class="btn btn-lg btn-color">{{homeCtrl.data.works.btnText}}</a>
+        <a href="http://vimeo.com" target="_blank" class="btn btn-lg btn-color">{{homeCtrl.data.works.btnText}}</a>
       </div>
 
     </div>
@@ -79,24 +48,8 @@
 </section> <!-- end call to action -->
 
 
-<!-- Process -->
-<section class="section-wrap process" style="background-image: url(assets/images/process_bg.jpg)">
-
-  <div class="container">
-
-    <div class="row heading">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center color-white bottom-line">{{homeCtrl.data.processes.title}}</h2>
-        <p class="subheading text-center color-white">{{homeCtrl.data.processes.subtitle}}</p>
-      </div>
-    </div>
-
-    <processes processes-data="homeCtrl.data.processes.processes"></processes>
-  </div>
-</section> <!-- process -->
-
 <!-- Our Team -->
-<section class="section-wrap pb-0 our-team" id="about-us">
+<section class="section-wrap our-team" id="about-us">
   <div class="container">
 
     <div class="row heading">
@@ -112,7 +65,7 @@
 
 
 <!-- About us / Progress Bars -->
-<section class="section-wrap pt-110">
+<section class="section-wrap pt-110 bg-light">
   <div class="container">
     <div class="row mt-minus-30">
 
@@ -132,84 +85,45 @@
 </section> <!-- end progress bars -->
 
 
-<!-- From Blog -->
-<section class="section-wrap bg-light from-blog" id="blog">
-  <div class="container">
-
-    <div class="row heading">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">{{homeCtrl.data.blogs.title}}</h2>
-        <p class="subheading text-center">{{homeCtrl.data.blogs.subtitle}}</p>
-      </div>
-    </div>
-
-    <blogs blogs-data="homeCtrl.data.blogs.blogs"></blogs>
-  </div>
-</section> <!-- end from blog -->
-
-
-<!-- Testimonials -->
-<section class="section-wrap parallax-testimonials relative" style="background-image: url(assets/images/testimonials_bg.jpg)">
-
-  <feedbacks feedbacks-data="homeCtrl.data.feedbacks.feedbacks"></feedbacks>
-</section> <!-- end testimonials -->
-
-
-<!-- Feedbacks -->
-<section class="section-wrap clients bg-light">
-  <div class="container">
-
-    <div class="row heading">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center bottom-line">{{homeCtrl.data.clients.title}}</h2>
-        <p class="subheading text-center">{{homeCtrl.data.clients.subtitle}}</p>
-      </div>
-    </div>
-
-    <clients clients-data="homeCtrl.data.clients.clients"></clients>
-  </div>
-</section> <!-- end clients -->
-
 <!-- Contact -->
 <section class="section-wrap contact" id="contact">
   <div class="container">
 
     <div class="row heading">
       <div class="col-md-6 col-md-offset-3 text-center">
-        <h2 class="text-center bottom-line">Contact Us</h2>
-        <p class="subheading">Dont hesitate to get touch please fill out this form and we'll get back to you within 48hrs. We hand picked to provide the right balance of skills to work.</p>
+        <h2 class="text-center bottom-line">{{homeCtrl.data.contacts.title}}</h2>
+        <p class="subheading">{{homeCtrl.data.contacts.subtitle}}</p>
       </div>
     </div>
 
     <div class="row">
 
       <div class="col-md-4">
-        <h5>Get in Touch</h5>
-        <p>Mon-Fri: 8:00 – 20:00</p>
+        <h5>{{homeCtrl.data.contacts.timeText}}</h5>
+        <p>{{homeCtrl.data.contacts.time}}</p>
 
         <div class="contact-item">
           <div class="contact-icon">
-            <i class="icon icon-Pointer"></i>
+            <i class="fa fa-map-marker"></i>
           </div>
           <h6>Address</h6>
-          <p>Drohobych,<br>
-            Test st. 256/6, 62058</p>
+          <p>{{homeCtrl.data.contacts.address}}</p>
         </div> <!-- end address -->
 
         <div class="contact-item">
           <div class="contact-icon">
-            <i class="icon icon-Phone"></i>
+            <i class="fa fa-phone"></i>
           </div>
           <h6>Call Us</h6>
-          <span>+3 8066 11 11 269</span>
+          <span>{{homeCtrl.data.contacts.phone}}</span>
         </div> <!-- end phone number -->
 
         <div class="contact-item">
           <div class="contact-icon">
-            <i class="icon icon-Mail"></i>
+            <i class="fa fa-envelope-o"></i>
           </div>
           <h6>E-mail</h6>
-          <a href="mailto:enigmasupport@gmail.com">test@mail.com</a>
+          <a href="mailto:{{homeCtrl.data.contacts.email}}">{{homeCtrl.data.contacts.email}}</a>
         </div> <!-- end email -->
 
       </div>
@@ -239,5 +153,36 @@
 
 
 <!-- Google Map -->
-<div id="google-map" class="gmap" data-address="Drohobych, Ukraine"></div>
+<div id="google-map" class="gmap" data-address="{{homeCtrl.data.contacts.address}}"></div>
+
+
+<!-- Footer -->
+<footer class="footer minimal bg-dark">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 col-md-offset-4">
+
+        <div class="footer-logo local-scroll mb-30 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <h2>
+            <a href="#home" class="color-white">ArtSide</a>
+          </h2>
+        </div>
+
+        <div class="socials footer-socials">
+          <a ng-if="homeCtrl.data.contacts.facebook" href="{{homeCtrl.data.contacts.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a ng-if="homeCtrl.data.contacts.twitter" href="{{homeCtrl.data.contacts.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a ng-if="homeCtrl.data.contacts.vimeo" href="{{homeCtrl.data.contacts.vimeo}}" target="_blank"><i class="fa fa-vimeo"></i></a>
+          <a ng-if="homeCtrl.data.contacts.vk" href="{{homeCtrl.data.contacts.vk}}" target="_blank"><i class="fa fa-vk"></i></a>
+        </div> <!-- end socials -->
+
+        <span class="copyright text-center">
+          ©2017 ArtSide  |  Development by <a href="http://https://github.com/olegdemkovych/" target="_blank">Oleg Demkovych</a>
+        </span>
+
+      </div>
+
+    </div>
+  </div>
+</footer> <!-- end footer -->
 

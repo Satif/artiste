@@ -14,9 +14,8 @@
       'app.topbar',
 
       // Views
-      'app.login',
-      'app.register',
       'app.home',
+      'app.admin-login',
       'app.admin'
 
     ]);

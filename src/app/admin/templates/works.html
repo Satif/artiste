@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <span class="collapsed">
-        6 блок (Works)
+        Works
       </span>
     </h4>
   </div>
@@ -42,9 +42,18 @@
             <input type="text" class="form-control" ng-model="vm.newWork.smallDescription" id="inp41" required>
           </div>
           <div class="form-group">
-            <label for="inp42">Повний опис</label>
-            <textarea id="inp42"></textarea>
+            <label for="inp42">Тип</label>
+            <select id="inp42" ng-model="vm.newWork.category" required>
+              <option value="weeding">Weeding</option>
+              <option value="advertising">Advertising</option>
+              <option value="music">Music Video</option>
+            </select>
           </div>
+          <div class="form-group">
+            <label for="inp46">Відео ІД</label>
+            <input type="text" class="form-control" ng-model="vm.newWork.videoId" id="inp46">
+          </div>
+         
           <div class="form-group">
             <label for="inp43">Головне фото</label>
             <input type="file" id="inp43" ng-model="vm.newWork.photoMain" name="file">
@@ -63,8 +72,12 @@
 
           <div class="work-item web-design print" ng-repeat="work in vm.data.works.works track by $index">
             <div class="work-img">
-              <span class="icon_pencil edit-btn" ng-click="vm.editItem('newWork', work)"></span>
-              <span class="icon_close delete-btn" ng-click="vm.removeItem(work, 'works')"></span>
+              <span class="icon_pencil edit-btn" ng-click="vm.editItem('newWork', work)">
+                <i class="fa fa-pencil"></i>
+              </span>
+              <span class="icon_close delete-btn" ng-click="vm.removeItem(work, 'works')">
+                <i class="fa fa-close"></i>
+              </span>
 
               <img src="assets/images/project_1.jpg" alt="">
               <div class="work-overlay">

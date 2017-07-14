@@ -5,6 +5,7 @@ var express  = require('express');
 var app      = express();                        // create our app w/ express
 var mongoose = require('mongoose');              // mongoose for mongodb
 var cors = require('cors');
+var jwt    = require('jsonwebtoken');
 
 var morgan   = require('morgan');                // log requests to the console (express4)
 var bodyParser = require('body-parser');         // pull information from HTML POST (express4)
@@ -24,6 +25,7 @@ mongoose.connect(conf.url.database, mongoOption, function(err, res) {
   }
 });
 
+app.set('superSecret', conf.url.secret); // secret variable
 app.use(cors());
 app.use(express.static(__dirname + '/dist'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
@@ -31,6 +33,45 @@ app.use(bodyParser.urlencoded({'extended':'true'}));            // parse applica
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
+
+
+var apiRoutes = express.Router();
+apiRoutes.use(function(req, res, next) {
+
+  // check header or url parameters or post parameters for token
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+  // decode token
+  if (token) {
+
+    // verifies secret and checks exp
+    jwt.verify(token, app.get('superSecret'), function(err, decoded) {
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;
+        next();
+      }
+    });
+
+  } else {
+
+    // if there is no token
+    // return an error
+    return res.status(403).send({
+      success: false,
+      message: 'No token provided.'
+    });
+
+  }
+});
+
+
+
+
+
+
 
 
 // routes ======================================================================

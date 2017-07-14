@@ -15,7 +15,8 @@
     "bootstrap": "3",
     "animate.css": "^3.5.2",
     "gmap3": "^7.2.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "angular-cookies": "^1.6.4"
   },
   "overrides": {}
 }

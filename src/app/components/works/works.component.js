@@ -39,22 +39,33 @@
       /* Masonry
        -------------------------------------------------------*/
 
-      initMasonry();
+      $timeout(function() {
+        initMasonry();
+      }, 100);
 
       function initMasonry() {
-        var $masonry = $('.masonry-grid');
-        $masonry.imagesLoaded(function () {
-          $masonry.isotope({
-            itemSelector: '.work-item',
-            layoutMode: 'masonry',
-            percentPosition: true,
-            resizable: false,
-            isResizeBound: false,
-            masonry: {columnWidth: '.work-item.quarter'}
-          });
+        var $masonry = $('.mas-grid');
+        var $grid = $masonry.isotope({
+          itemSelector: '.work-item',
+          layoutMode: 'fitRows',
+          percentPosition: true,
+          resizable: false,
+          isResizeBound: false,
+          masonry: {columnWidth: '.work-item.quarter'}
         });
 
-        $masonry.isotope();
+        $('.btn-group').on( 'click', 'button', function() {
+          var filterValue = $( this ).attr('data-filter');
+          $grid.isotope({ filter: filterValue });
+        });
+
+        $('.btn-group').each( function( i, buttonGroup ) {
+          var $buttonGroup = $( buttonGroup );
+          $buttonGroup.on( 'click', 'button', function() {
+            $buttonGroup.find('.active').removeClass('active');
+            $( this ).addClass('active');
+          });
+        });
       }
 
       /* Lightbox popup
