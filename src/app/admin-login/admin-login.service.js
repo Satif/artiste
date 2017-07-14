@@ -9,7 +9,6 @@
   function AdminLoginService($q, $http, $cookies, CONSTANT) {
     return {
       login: login,
-      cr: cr,
       saveToken: saveToken,
       isLogined: isLogined,
       logout: logout
@@ -19,18 +18,6 @@
       var deferred = $q.defer();
 
       $http.post(CONSTANT.API + '/authenticate', data).then(function(resp) {
-        deferred.resolve(resp);
-      }, function(err) {
-        deferred.reject(err);
-      });
-
-      return deferred.promise;
-    }
-
-    function cr() {
-      var deferred = $q.defer();
-
-      $http.get(CONSTANT.API + '/setup', function(resp) {
         deferred.resolve(resp);
       }, function(err) {
         deferred.reject(err);

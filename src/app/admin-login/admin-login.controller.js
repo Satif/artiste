@@ -14,7 +14,6 @@
     /////////////
 
     function login() {
-      AdminLoginService.cr();
       AdminLoginService.login(vm.user).then(function(resp) {
         if (resp && resp.data.token) {
           AdminLoginService.saveToken(resp.data.token);
