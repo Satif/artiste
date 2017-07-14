@@ -6,7 +6,7 @@
     .factory('AdminLoginService', AdminLoginService);
 
   /** @ngInject */
-  function AdminLoginService($q, $http, $cookies) {
+  function AdminLoginService($q, $http, $cookies, CONSTANT) {
     return {
       login: login,
       cr: cr,
@@ -18,7 +18,7 @@
     function login(data) {
       var deferred = $q.defer();
 
-      $http.post('http://localhost:8888/authenticate', data).then(function(resp) {
+      $http.post(CONSTANT.API + '/authenticate', data).then(function(resp) {
         deferred.resolve(resp);
       }, function(err) {
         deferred.reject(err);
@@ -30,7 +30,7 @@
     function cr() {
       var deferred = $q.defer();
 
-      $http.get('http://localhost:8888/setup', function(resp) {
+      $http.get(CONSTANT.API + '/setup', function(resp) {
         deferred.resolve(resp);
       }, function(err) {
         deferred.reject(err);

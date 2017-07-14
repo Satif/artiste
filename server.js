@@ -67,13 +67,6 @@ apiRoutes.use(function(req, res, next) {
   }
 });
 
-
-
-
-
-
-
-
 // routes ======================================================================
 require('./server/routes.js')(app);
 
