@@ -103,6 +103,6 @@ module.exports = function(app) {
 
 // application ======================================================================
   app.get('*', function(req, res) {
-    res.sendfile('index.html');
+    res.sendfile('/dist/index.html');
   });
 };
