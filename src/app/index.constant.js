@@ -6,7 +6,7 @@
     API: 'https://artside.herokuapp.com'
 	};
 
-	angular.module('app')
+	angular.module('artside')
 		.constant('CONSTANT', CONSTANT);
 	
 })();

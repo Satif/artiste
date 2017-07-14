@@ -8,7 +8,6 @@
         $('.loader-mask').delay(350).fadeOut('slow');
 
         $(window).trigger("resize");
-        initOnepagenav();
     });
   }, 0);
 
@@ -75,16 +74,7 @@
 
 
   // Closes the Responsive Menu on Menu Item Click
-  function initOnepagenav() {
 
-    $('.navigation-overlay .navbar-collapse ul li a, .nav-type-4 .navbar-collapse ul li a').on('click', function () {
-      $('.navbar-toggle:visible').click();
-    });
-
-    // Smooth Scroll Navigation
-    $('.local-scroll').localScroll({offset: {top: -60}, duration: 1500, easing: 'easeInOutExpo'});
-    $('.local-scroll-no-offset').localScroll({offset: {top: 0}, duration: 1500, easing: 'easeInOutExpo'});
-  }
 
 
   /* Mobile Navigation
