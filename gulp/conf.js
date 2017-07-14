@@ -11,9 +11,9 @@ exports.paths = {
 };
 
 exports.url = {
-  database: 'mongodb://admin:art9874RT#@ds157112.mlab.com:57112/heroku_20v3s87z',
-  secret: 'qlr48#AS'
-  // database: 'mongodb://localhost/artside'
+  // database: 'mongodb://admin:art9874RT#@ds157112.mlab.com:57112/heroku_20v3s87z',
+  secret: 'qlr48#AS',
+  database: 'mongodb://localhost/artside'
 };
 
 // Wiredep
