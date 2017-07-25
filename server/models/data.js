@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
+var Schema      = mongoose.Schema;
 
 module.exports = mongoose.model('data', {
   "slider": {
     "btnText": String,
     "subtitle": String,
     "videoId": String,
-    "title": String
+    "title": String,
+    "image": {type: Schema.Types.Mixed}
   },
   "works": {
     "btnText": String,
@@ -14,7 +16,8 @@ module.exports = mongoose.model('data', {
         "smallDescription": String,
         "name": String,
         "category": String,
-        "photoMain": String,
+        "photoMain": {type: Schema.Types.Mixed},
+        "morePictures": Schema.Types.Mixed,
         "videoId": String
       }
     ],
@@ -27,7 +30,7 @@ module.exports = mongoose.model('data', {
       {
         "facebook": String,
         "name": String,
-        "photo": String,
+        "photo": {type: Schema.Types.Mixed},
         "description": String,
         "position": String,
         "email": String
@@ -47,14 +50,14 @@ module.exports = mongoose.model('data', {
     "title": String
   },
   "welcome": {
-    "logo": String,
+    "logo": {type: Schema.Types.Mixed},
     "text": String,
     "title": String
   },
   "contacts": {
     "subtitle": String,
     "title": String,
-    "logo": String,
+    "logo": {type: Schema.Types.Mixed},
     "time": String,
     "timeText": String,
     "address": String,

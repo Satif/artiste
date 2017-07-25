@@ -7,6 +7,9 @@
                 'ngAnimate',
                 'ngResource',
                 'ngCookies',
-                'ui.router'
+                'ui.router',
+              'ngFileUpload',
+              'angular-cloudinary',
+              'angular-filepicker'
             ]);
 })();

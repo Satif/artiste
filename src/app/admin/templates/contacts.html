@@ -11,6 +11,18 @@
     <div class="panel-body">
       <form ng-submit="vm.save()">
         <div class="form-group">
+          <label for="inp90">Лого (66x66)</label>
+          <div>
+            <button type="button" class="btn btn-default" ng-click="vm.upload(vm.data.contacts, 'logo')">
+              Upload <span class="caret"></span>
+            </button>
+          </div>
+
+          <div style="margin-top:10px;" ng-if="vm.data.contacts.logo">
+            <img ng-src="{{vm.data.contacts.logo.url | fpConvert: {w:66, h:66} }}">
+          </div>
+        </div>
+        <div class="form-group">
           <label for="inp90">Заголовок</label>
           <input type="text" class="form-control" ng-model="vm.data.contacts.title" id="inp90">
         </div>

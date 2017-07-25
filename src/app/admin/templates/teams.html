@@ -46,9 +46,17 @@
             <input type="text" class="form-control" ng-model="vm.newTeam.email" id="inp65" required>
           </div>
           <div class="form-group">
-            <label for="inp67">Фото</label>
-            <input type="file" id="inp67" ng-model="vm.newTeam.photo" name="file">
-            <div class="help-block">Фото (370x450).</div>
+            <label for="inp67">Фото (370x450)</label>
+
+            <div>
+              <button type="button" class="btn btn-default" ng-click="vm.upload(vm.newTeam, 'photo')">
+                Upload <span class="caret"></span>
+              </button>
+            </div>
+
+            <div style="margin-top:10px;" ng-if="vm.newTeam.photo">
+              <img ng-src="{{vm.newTeam.photo.url | fpConvert: {w:370, h:450} }}">
+            </div>
           </div>
 
           <div class="text-right">
@@ -72,7 +80,7 @@
                 </span>
 
                 <div class="team-img">
-                  <img src="assets/images/team_1.jpg" alt="">
+                  <img ng-src="{{team.photo.url}}" alt="">
                   <div class="overlay">
                     <div class="team-details text-center">
                       <p>

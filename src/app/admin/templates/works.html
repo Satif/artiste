@@ -50,14 +50,38 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="inp46">Відео ІД</label>
+            <label for="inp46">Відео URL</label>
             <input type="text" class="form-control" ng-model="vm.newWork.videoId" id="inp46">
           </div>
          
           <div class="form-group">
-            <label for="inp43">Головне фото</label>
-            <input type="file" id="inp43" ng-model="vm.newWork.photoMain" name="file">
-            <div class="help-block">Логотип (768x624).</div>
+            <label>Головне фото (768x624)</label>
+            <div>
+              <button type="button" class="btn btn-default" ng-click="vm.upload(vm.newWork, 'photoMain')">
+                Upload <span class="caret"></span>
+              </button>
+            </div>
+
+            <div style="margin-top:10px;" ng-if="vm.newWork.photoMain">
+              <img ng-src="{{vm.newWork.photoMain.url | fpConvert: {w:768, h:624} }}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Фото</label>
+            <div>
+              <button type="button" class="btn btn-default" ng-click="vm.uploadMultiple(vm.newWork, 'morePictures')">
+                Upload <span class="caret"></span>
+              </button>
+            </div>
+
+            <div style="margin-top:10px;" ng-repeat="picture in vm.newWork.morePictures">
+              <div class="col-md-{{12 / vm.newWork.morePictures.length}}">
+                <a href="{{picture.url}}" class="thumbnail">
+                  <img ng-src="{{picture.url | fpConvert: {w:400} }}">
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="text-right">
@@ -79,7 +103,7 @@
                 <i class="fa fa-close"></i>
               </span>
 
-              <img src="assets/images/project_1.jpg" alt="">
+              <img ng-src="{{work.photoMain.url}}" alt="">
               <div class="work-overlay">
                 <div class="work-description">
                   <h3>

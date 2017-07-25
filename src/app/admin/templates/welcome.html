@@ -19,12 +19,21 @@
           <textarea rows="3" class="form-control" ng-model="vm.data.welcome.text" id="inp2"></textarea>
         </div>
         <div class="form-group">
-          <label for="inp3">Лого</label>
-          <input type="file" id="inp3" ng-model="vm.data.welcome.logo" >
-          <p class="help-block">Логотип (192x189).</p>
+          <label>Лого (192x189)</label>
+          <div>
+            <button type="button" class="btn btn-default" ng-click="vm.upload(vm.data.welcome, 'logo')">
+              Upload <span class="caret"></span>
+            </button>
+          </div>
+
+          <div style="margin-top:10px;" ng-if="vm.data.welcome.logo">
+            <img ng-src="{{vm.data.welcome.logo.url | fpConvert: {w:192, h:189} }}">
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-default">Зберегти</button>
+        <div class="text-right">
+          <button type="submit" class="btn btn-default">Зберегти</button>
+        </div>
       </form>
     </div>
   </div>

@@ -6,17 +6,20 @@
     .controller('AdminController', AdminController);
 
   /* @ngInject */
-  function AdminController(HomeService, Data) {
+  function AdminController($scope, HomeService, Data, filepickerService) {
     var vm = this;
 
     vm.data = Data[0];
     vm.save = save;
 
+    vm.upload = upload;
+    vm.uploadMultiple = uploadMultiple;
+
     vm.addItem = addItem;
     vm.editItem = editItem;
     vm.removeItem = removeItem;
     vm.clearForm = clearForm;
-    
+
     //////////////
     
     function save() {
@@ -25,6 +28,36 @@
         .then(function (resp) {
           vm.data = resp;
         });
+    }
+
+    function upload(modelPath, modelProp) {
+      filepickerService.pick({
+        mimetype: 'image/*',
+        language: 'en',
+        services: ['COMPUTER','DROPBOX','GOOGLE_DRIVE', 'FACEBOOK', 'INSTAGRAM'],
+        openTo: 'COMPUTER'
+      }, function(Blob) {
+        modelPath[modelProp] = '';
+        modelPath[modelProp] = Blob;
+
+        $scope.$apply();
+      });
+
+    }
+
+    function uploadMultiple(modelPath, modelProp) {
+      filepickerService.pickMultiple({
+        mimetype: 'image/*',
+        language: 'en',
+        services: ['COMPUTER','DROPBOX','GOOGLE_DRIVE', 'FACEBOOK', 'INSTAGRAM'],
+        openTo: 'COMPUTER'
+      }, function(Blob) {
+        modelPath[modelProp] = '';
+        modelPath[modelProp] = Blob;
+
+        $scope.$apply();
+      });
+
     }
 
     // ACHIEVEMENTS

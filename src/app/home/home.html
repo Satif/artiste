@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-md-3 col-xs-12 cta-button">
-        <a href="http://vimeo.com" target="_blank" class="btn btn-lg btn-color">{{homeCtrl.data.works.btnText}}</a>
+        <a href="{{homeCtrl.data.contacts.vimeo}}" target="_blank" class="btn btn-lg btn-color">{{homeCtrl.data.works.btnText}}</a>
       </div>
 
     </div>
@@ -129,21 +129,20 @@
       </div>
 
       <div class="col-md-8">
-        <form id="contact-form" action="#">
+        <form name="contactFrom" id="contact-form" ng-submit="homeCtrl.sendMail()">
 
           <div class="row contact-row">
             <div class="col-md-6 contact-name">
-              <input name="name" id="name" type="text" placeholder="Name*">
+              <input name="name" id="name" type="text" placeholder="Name*" required ng-model="homeCtrl.contactForm.name">
             </div>
             <div class="col-md-6 contact-email">
-              <input name="mail" id="mail" type="email" placeholder="E-mail*">
+              <input name="mail" id="mail" type="email" placeholder="E-mail*" required ng-model="homeCtrl.contactForm.email">
             </div>
           </div>
 
-          <input name="subject" id="subject" type="text" placeholder="Subject">
-          <textarea name="comment" id="comment" placeholder="Message"></textarea>
-          <input type="submit" class="btn btn-lg btn-color btn-submit" value="Send Message" id="submit-message">
-          <div id="msg" class="message"></div>
+          <input name="subject" id="subject" type="text" placeholder="Subject" ng-model="homeCtrl.contactForm.subject">
+          <textarea name="comment" id="comment" placeholder="Message" ng-model="homeCtrl.contactForm.content"></textarea>
+          <input type="submit" class="btn btn-lg btn-color btn-submit" value="Send Message" id="submit-message" ng-disabled="contactFrom.$invalid">
         </form>
       </div> <!-- end col -->
 
@@ -151,10 +150,8 @@
   </div>
 </section> <!-- end contact -->
 
-
 <!-- Google Map -->
 <div id="google-map" class="gmap" data-address="{{homeCtrl.data.contacts.address}}"></div>
-
 
 <!-- Footer -->
 <footer class="footer minimal bg-dark">

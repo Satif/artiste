@@ -70,21 +70,45 @@
 
       /* Lightbox popup
        -------------------------------------------------------*/
+      $('.lightbox-gallery').each(function() {
+        if ($(this).data('items') || $(this).data('video')) {
+          var items = $(this).data('items');
+          var images = [];
 
-      $('.lightbox-gallery').magnificPopup({
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0, 1]
-        },
-        image: {
-          titleSrc: 'title',
-          verticalFit: true
+          angular.forEach(items, function(item) {
+            images.push({src: item.url});
+          });
+
+          if ($(this).data('video')) {
+            images.push({src: $(this).data('video'), type: 'iframe'});
+          }
+
+          $(this).magnificPopup({
+            items: images,
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0, 1]
+            }
+          });
+        } else {
+          $(this).magnificPopup({
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0, 1]
+            },
+            image: {
+              titleSrc: 'title',
+              verticalFit: true
+            }
+          });
         }
       });
-
 
       $(".lightbox-video").magnificPopup();
 

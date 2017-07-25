@@ -7,10 +7,12 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController(Data, $timeout) {
+  function HomeController(Data, $timeout, HomeService) {
     var self = this;
     
     self.data = Data[0];
+
+    self.sendMail = sendMail;
 
     $timeout(function() {
       /* ---------------------------------------------------------------------- */
@@ -79,6 +81,13 @@
         $('.local-scroll-no-offset').localScroll({offset: {top: 0}, duration: 1500, easing: 'easeInOutExpo'});
       }
     }, 0);
+
+
+    function sendMail() {
+      HomeService.sendEmail(self.contactForm).then(function(resp) {
+        self.contactForm = null;
+      });
+    }
   }
 
 })();

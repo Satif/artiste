@@ -10,7 +10,7 @@
 <div class="grid-3-col grid-wide grid-gutter grayscale mas-grid">
   <div class="work-item web-design print {{work.category}}" data-category="{{work.category}}" ng-repeat="work in worksCtrl.worksData">
     <div class="work-img">
-      <img src="assets/images/project_1.jpg" alt="">
+      <img ng-src="{{work.photoMain.url}}" alt="">
       <div class="work-overlay">
         <div class="work-description">
           <h3>
@@ -20,7 +20,8 @@
             <a href="#">{{work.smallDescription}}</a>
           </span>
         </div>
-        <a href="#" class="lightbox-gallery btn btn-lg btn-transparent" title="{{work.name}}">View Work</a>
+
+        <a href="{{work.photoMain.url}}" class="lightbox-gallery btn btn-lg btn-transparent" title="{{work.name}}" data-items="{{work.morePictures}}" data-video="{{work.videoId}}">View Work</a>
       </div>
     </div>
   </div>

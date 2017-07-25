@@ -26,8 +26,23 @@
           <label for="text4">Відео ID (Vimeo video id)</label>
           <input type="text" class="form-control" ng-model="vm.data.slider.videoId" id="text4">
         </div>
+        <div class="form-group">
+          <label>Картинка - фон (1230x691)</label>
 
-        <button type="submit" class="btn btn-default">Зберегти</button>
+          <div>
+            <button type="button" class="btn btn-default" ng-click="vm.upload(vm.data.slider, 'image')">
+              Upload <span class="caret"></span>
+            </button>
+          </div>
+
+          <div style="margin-top:10px;" ng-if="vm.data.slider.image">
+            <img ng-src="{{vm.data.slider.image.url | fpConvert: {w:1230, h:691} }}">
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="submit" class="btn btn-default">Зберегти</button>
+        </div>
       </form>
     </div>
   </div>

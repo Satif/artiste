@@ -9,7 +9,8 @@
   function HomeService($q, $http, CONSTANT) {
     return {
       getAllData: getAllData,
-      save: save
+      save: save,
+      sendEmail: sendEmail
     };
 
     function getAllData() {
@@ -34,6 +35,18 @@
 
         });
       }
+
+      return deferred.promise;
+    }
+
+    function sendEmail(data) {
+      var deferred = $q.defer();
+
+      $http.post(CONSTANT.API + '/contact-form', data, function(resp) {
+        deferred.resolve(resp);
+      }, function(err) {
+        deferred.reject(err);
+      });
 
       return deferred.promise;
     }
